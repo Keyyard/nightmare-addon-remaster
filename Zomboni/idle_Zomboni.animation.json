@@ -1,0 +1,32 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.zomboni.idle": {
+			"loop": true,
+			"animation_length": 2,
+			"bones": {
+				"hat": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"1.0": [2.5, 0, 0],
+						"2.0": [0, 0, 0]
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"1.0": [0, 0, 3.45],
+						"2.0": [0, 0, 0]
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"1.0": [0, 0, -3.45],
+						"2.0": [0, 0, 0]
+					}
+				}
+			}
+		}
+	}
+}
