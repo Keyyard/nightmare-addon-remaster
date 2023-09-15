@@ -1,0 +1,21 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "pack.name",
+    "description": "pack.description",
+    "uuid": "5317015e-c03f-0f5b-2815-5464797eaa15",
+    "version": [0, 0, 8],
+    "min_engine_version": [1, 17, 0]
+  },
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "6b5c26eb-a1a4-bac1-8567-6759647daa79",
+      "version": [0, 0, 8]
+    }
+  ],
+  "metadata": {
+    "authors": ["Keyyard", "ZarkmendZan"],
+    "url": "https://mcpedl.com/ghost-addon/"
+  }
+}

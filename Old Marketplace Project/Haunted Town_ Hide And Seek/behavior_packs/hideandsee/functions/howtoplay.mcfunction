@@ -1,0 +1,2 @@
+tellraw @a {"rawtext":[{"text":"A player is chosen at random to be the §eseeker§r. Everyone will have §e15 seconds to hide§r, then the §ehiders§r will be hunted down by seekers.\nEvery captured hider turns into a seeker. The seekers win §ewhen all hiders are captured§r, and hiders win §ewhen the time limit is up.§r\n\n§4Some say that the lightning shall strike the remaining victims at times..."}]}
+

@@ -1,0 +1,30 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "entity:start",
+            "textures": {
+                "default": "textures/entity/start",
+                "playing": "textures/entity/playing"
+            },
+            "materials": {
+                "default": "entity_alphatest"
+            },
+            "geometry": {
+                "default": "geometry.start"
+            },
+            "animations": {
+                "pressed": "animation.pressed",
+                "button": "controller.animation.button"
+            },
+            "scripts": {
+                "animate": [
+                    "button"
+                ]
+            },
+            "render_controllers": [
+                "controller.render.start"
+            ]
+        }
+    }
+}

@@ -1,0 +1,141 @@
+{
+    "format_version": "1.16.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "entity:headless_horseman",
+            "is_spawnable": true,
+            "is_summonable": true,
+            "is_experimental": false,
+            "animations": {
+                "fire_path": "controller.animation.headless_horseman.fire_path"
+            },
+            "scripts": {
+                "animate": [
+                    "fire_path"
+                ]
+            }
+        },
+
+        "component_groups": {},
+
+        "components": {
+            "minecraft:experience_reward": {
+                "on_death": 75.0
+            },
+            "minecraft:breathable": {
+                "total_supply": 15,
+                "suffocate_time": 1,
+                "breathes_water": true
+            },
+            "minecraft:loot": {
+                "table": "loot_tables/entity/headless_horseman.json"
+            },
+            "minecraft:health": {
+                "value": 175,
+                "max": 175
+            },
+            "minecraft:boss": {
+                "should_darken_sky": true,
+                "name": "entity.entity:headless_horseman.name",
+                "hud_range": 125
+            },
+            "minecraft:navigation.generic": {},
+            "minecraft:collision_box": {
+                "width": 1.2,
+                "height": 2.3
+            },
+            "minecraft:attack": {
+                "damage": 6,
+                "effect_duration": 1,
+                "effect_name": "blindness"
+            },
+            "minecraft:behavior.melee_attack": {
+                "speed_multiplier": 2,
+                "priority": 3
+            },
+            "minecraft:movement": {
+                "value": 0.25,
+                "max": 0.6
+            },
+            "minecraft:movement.basic": {},
+            "minecraft:jump.dynamic": {},
+            "minecraft:can_climb": {},
+            "minecraft:damage_sensor": {
+                "triggers": {
+                    "on_damage": {
+                        "filters": {
+                            "test": "is_family",
+                            "value": "player",
+                            "subject": "other",
+                            "operator": "!="
+                        }
+                    },
+                    "deals_damage": false
+                }
+            },
+            "minecraft:behavior.hurt_by_target": {
+                "priority": 1
+            },
+            "minecraft:behavior.nearest_attackable_target": {
+                "priority": 1,
+                "within_radius": 256,
+                "reselect_targets": true,
+                "entity_types": [{
+                    "filters": [{
+                        "any_of": [{
+                                "test": "is_family",
+                                "subject": "other",
+                                "value": "player"
+                            },
+                            {
+                                "test": "is_family",
+                                "subject": "other",
+                                "value": "player",
+                                "operator": "!="
+                            }
+                        ]
+                    }],
+                    "max_dist": 256
+                }],
+                "must_see": false,
+                "must_see_forget_duration": 0.5,
+                "scan_interval": 20
+            },
+            "minecraft:behavior.random_stroll": {
+                "priority": 4,
+                "speed_multiplier": 1
+            },
+            "minecraft:jump.static": {
+                "jump_power": 0.5
+            },
+            "minecraft:behavior.look_at_player": {
+                "priority": 6,
+                "look_distance": 8.0
+            },
+            "minecraft:behavior.random_look_around": {
+                "priority": 4
+            },
+            "minecraft:type_family": {
+                "family": [
+                    "headless_horseman",
+                    "boss_mob"
+                ]
+            },
+            "minecraft:follow_range": {
+                "value": 128,
+                "max": 128
+            },
+            "minecraft:conditional_bandwidth_optimization": {},
+            "minecraft:physics": {},
+            "minecraft:pushable": {}
+        },
+
+        "events": {
+            "minecraft:entity_spawned": {
+                "run_command": {
+                    "command": ["time set midnight", "weather thunder", "summon lightning_bolt"]
+                }
+            }
+        }
+    }
+}

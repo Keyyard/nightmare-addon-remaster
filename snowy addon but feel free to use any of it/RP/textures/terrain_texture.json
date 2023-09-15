@@ -1,0 +1,14 @@
+{
+	"num_mip_levels": 4,
+	"padding": 8,
+	"resource_pack_name": "Snowglobe",
+	"texture_name": "atlas.terrain",
+	"texture_data": {
+		"snowglobe": {
+			"textures": "textures/blocks/snowglobe"
+		},
+		"keyyard_radio": {
+			"textures": "textures/blocks/radio"
+		}
+	}
+}

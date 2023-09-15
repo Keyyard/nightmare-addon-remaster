@@ -1,0 +1,105 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "keyyard:radio",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"keyyard:playing": {
+				"minecraft:is_shaking": {},
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"interact_text": "stop",
+							"on_interact": {
+								"filters": {
+									"test": "is_family",
+									"value": "player"
+								},
+								"target": "self",
+								"event": "keyyard:stop"
+							}
+						}
+					]
+				}
+			},
+			"keyyard:stop": {
+				"minecraft:interact": {
+					"interactions": [
+						{
+							"interact_text": "play",
+							"on_interact": {
+								"filters": {
+									"test": "is_family",
+									"value": "player"
+								},
+								"target": "self",
+								"event": "keyyard:play"
+							}
+						}
+					]
+				}
+			}
+		},
+		"components": {
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+			"minecraft:on_hurt": {
+				"target": "self",
+				"event": "keyyard:stop"
+			},
+			"minecraft:health": {
+				"max": 8,
+				"value": 8
+			},
+			"minecraft:loot": {
+				"table": "loot_tables/radio.json"
+			},
+			"minecraft:physics": {}
+		},
+		"events": {
+			"minecraft:entity_born": {
+				"add": {
+					"component_groups": [
+						"keyyard:stop"
+					]
+				}
+			},
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"keyyard:stop"
+					]
+				}
+			},
+			"keyyard:play": {
+				"add": {
+					"component_groups": [
+						"keyyard:playing"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"keyyard:stop"
+					]
+				}
+			},
+			"keyyard:stop": {
+				"add": {
+					"component_groups": [
+						"keyyard:stop"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"keyyard:playing"
+					]
+				}
+			}
+		}
+	}
+}

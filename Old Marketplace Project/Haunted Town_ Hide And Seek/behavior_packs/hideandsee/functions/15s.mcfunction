@@ -1,0 +1,1 @@
+tellraw @a {"rawtext":[{"text":"SEEKER: " },{ "selector": "@a[tag=seeker]" }, { "text": " will be released after 15 seconds"}]}

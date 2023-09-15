@@ -1,0 +1,102 @@
+{
+    "format_version": "1.16.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "entity:start",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "is_experimental": false,
+            "animations": {
+                "trigger": "controller.animation.trigger"
+            },
+            "scripts": {
+                "animate": [
+                    "trigger"
+                ]
+            }
+        },
+        "component_groups": {
+            "trigger": {
+                "minecraft:is_ignited": {},
+                "minecraft:variant": {
+                    "value": 1
+                }
+            },
+            "reset": {
+                "minecraft:variant": {
+                    "value": 0
+                },
+                "minecraft:interact": {
+                    "interactions": {
+                        "interact_text": "press",
+                        "swing": true,
+                        "on_interact": {
+                            "event": "trigger",
+                            "filters": {
+                                "all_of": [{
+                                    "test": "is_family",
+                                    "subject": "other",
+                                    "value": "player"
+                                }]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "components": {
+            "minecraft:type_family": {
+                "family": [
+                    "start"
+                ]
+            },
+            "minecraft:scale": {
+                "value": 0.5
+            },
+            "minecraft:collision_box": {
+                "height": 0.75,
+                "width": 2.5
+            },
+            "minecraft:behavior.float": {},
+            "minecraft:damage_sensor": {
+                "triggers": {
+                    "cause": "all",
+                    "deals_damage": false
+                }
+            }
+        },
+        "events": {
+            "minecraft:entity_spawned": {
+                "add": {
+                    "component_groups": [
+                        "reset"
+                    ]
+                }
+            },
+            "trigger": {
+                "add": {
+                    "component_groups": [
+                        "trigger"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "reset"
+                    ]
+                }
+            },
+            "reset": {
+                "add": {
+                    "component_groups": [
+                        "reset"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "trigger"
+                    ]
+                }
+            }
+        }
+    }
+}

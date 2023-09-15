@@ -1,0 +1,843 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "entity:royal_ghost",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "death_controller",
+          "stomp_damage"
+        ]
+      },
+      "animations": {
+        "death_controller": "controller.animation.royal_ghost.death_trigger",
+        "stomp_damage": "controller.animation.royal_ghost.stomp_damage"
+      }
+    },
+
+    "component_groups": {
+      "spawned": {
+        "minecraft:damage_sensor": {
+          "triggers": {
+            "cause": "all",
+            "deals_damage": false
+          }
+        },
+        "minecraft:is_ignited": {
+        },
+        "minecraft:timer": {
+          "looping": true,
+          "time": [10.0, 12.0],
+          "time_down_event": {
+            "event": "ready",
+            "target": "self"
+          }
+        },
+        "minecraft:spell_effects": {
+        },
+        "minecraft:behavior.knockback_roar": {
+          "priority": 0,
+          "duration": 0.8,
+          "attack_time": 0.6,
+          "knockback_damage": 1,
+          "knockback_strength": -2,
+          "knockback_range": 64,
+          "knockback_filters": {
+            "all_of": [
+              {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "!=",
+                "value": "ghost"
+              },
+              {
+                "none_of": [
+                  {
+                    "test": "has_ability",
+                    "subject": "other",
+                    "operator": "==",
+                    "value": "instabuild"
+                  }
+                ]
+              }
+            ]
+          },
+          "damage_filters": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "!=",
+            "value": "ghost"
+          },
+          "cooldown_time": 0.1
+        }
+      },
+      "is_charged": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "magic",
+              "deals_damage": false
+            },
+            {
+              "cause": "fall",
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:behavior.leap_at_target": {
+          "priority": 1,
+          "yd": 3.2,
+          "must_be_on_ground": false
+        },
+        "minecraft:is_charged": {
+        }
+      },
+      "knockback_cooldown": {
+        "minecraft:timer": {
+          "looping": true,
+          "time": [15.0, 20.0],
+          "time_down_event": {
+            "event": "on_knockback_start",
+            "target": "self"
+          }
+        }
+      },
+      "on_knockback": {
+        "minecraft:spell_effects": {
+          "add_effects": [
+            {
+              "effect": "regeneration",
+              "duration": 5,
+              "amplifier": 3,
+              "ambient": true,
+              "visible": true
+            }
+          ],
+          "remove_effects": "wither"
+        },
+        "minecraft:behavior.knockback_roar": {
+          "priority": 0,
+          "duration": 1.5,
+          "attack_time": 0.9,
+          "knockback_damage": 60,
+          "knockback_strength": 6,
+          "knockback_range": 60,
+          "knockback_filters": {
+            "all_of": [
+              {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "!=",
+                "value": "ghost"
+              },
+              {
+                "none_of": [
+                  {
+                    "test": "has_ability",
+                    "subject": "other",
+                    "operator": "==",
+                    "value": "instabuild"
+                  }
+                ]
+              }
+            ]
+          },
+          "damage_filters": {
+            "any_of": [
+              {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "==",
+                "value": "undead"
+              },
+              {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "operator": "!=",
+                    "value": "player"
+                  },
+                  {
+                    "test": "is_target",
+                    "subject": "other",
+                    "operator": "==",
+                    "value": true
+                  }
+                ]
+              }
+            ]
+          },
+          "on_roar_end": {
+            "event": "on_knockback_end"
+          },
+          "cooldown_time": 0.4
+        }
+      },
+
+      "on_stomp_damage": {
+        "minecraft:area_attack": {
+          "damage_range": 12,
+          "damage_per_tick": 12,
+          "cause": "entity_explosion",
+          "entity_filter": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "==",
+            "value": "player"
+          }
+        },
+        "minecraft:spawn_entity": {
+          "entities": {
+            "min_wait_time": 0.05,
+            "max_wait_time": 0.05,
+            "spawn_sound": "celebrate",
+            "single_use": true,
+            "spawn_entity": "minecraft:area_effect_cloud"
+          }
+        },
+        "minecraft:behavior.knockback_roar": {
+          "priority": 0,
+          "duration": 0.2,
+          "attack_time": 0.15,
+          "knockback_damage": 80,
+          "knockback_strength": 8,
+          "knockback_range": 20,
+          "knockback_filters": {
+            "all_of": [
+              {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "!=",
+                "value": "ghost"
+              },
+              {
+                "none_of": [
+                  {
+                    "test": "has_ability",
+                    "subject": "other",
+                    "operator": "==",
+                    "value": "instabuild"
+                  }
+                ]
+              }
+            ]
+          },
+          "damage_filters": {
+            "any_of": [
+              {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "==",
+                "value": "undead"
+              },
+              {
+                "all_of": [
+                  {
+                    "test": "has_target",
+                    "subject": "other",
+                    "operator": "==",
+                    "value": true
+                  },
+                  {
+                    "test": "has_component",
+                    "subject": "other",
+                    "operator": "!=",
+                    "value": "minecraft:is_ignited"
+                  }
+                ]
+              },
+              {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "operator": "!=",
+                    "value": "player"
+                  },
+                  {
+                    "test": "is_target",
+                    "subject": "other",
+                    "operator": "==",
+                    "value": true
+                  }
+                ]
+              }
+            ]
+          },
+          "on_roar_end": {
+            "event": "on_stomp_end"
+          },
+          "cooldown_time": 0.0
+        },
+        "minecraft:behavior.celebrate": {
+          "priority": 0,
+          "duration": 0.6,
+          "on_celebration_end_event": {
+            "event": "on_stomp_end",
+            "target": "self"
+          }
+        }
+      },
+      
+      "basic_area_attack": {
+        "minecraft:area_attack": {
+          "damage_range": 14,
+          "damage_per_tick": 20,
+          "cause": "entity_explosion",
+          "entity_filter": {
+            "any_of": [
+              {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "==",
+                "value": "undead"
+              },
+              {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "operator": "!=",
+                    "value": "player"
+                  },
+                  {
+                    "test": "is_target",
+                    "subject": "other",
+                    "operator": "==",
+                    "value": true
+                  }
+                ]
+              },
+              {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "operator": "==",
+                    "value": "monster"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "operator": "!=",
+                    "value": "ghost"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "operator": "!=",
+                    "value": "ghoul"
+                  },
+                  {
+                    "test": "has_target",
+                    "subject": "other",
+                    "operator": "==",
+                    "value": true
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+
+      "despawn": {
+        "minecraft:instant_despawn": {
+        }
+      },
+      "start_death": {
+        "minecraft:transformation": {
+          "into": "entity:royal_ghost<on_death>",
+          "keep_level": true,
+          "drop_inventory": false,
+          "preserve_equipment": true
+        }
+      },
+      "death": {
+        "minecraft:damage_sensor": {
+          "triggers": {
+            "cause": "all",
+            "deals_damage": false
+          }
+        },
+        "minecraft:behavior.ranged_attack": {
+          "priority": 8,
+          "attack_interval_min": 120,
+          "attack_interval_max": 120,
+          "speed_multiplier": 0,
+          "attack_radius": 65,
+          "burst_shots": 1
+        },
+        "minecraft:can_power_jump": {
+        },
+        "minecraft:health": {
+          "min": 1,
+          "value": 1,
+          "max": 175
+        },
+        "minecraft:behavior.knockback_roar": {
+          "priority": 0,
+          "duration": 0.2,
+          "attack_time": 0.2,
+          "knockback_damage": 1,
+          "knockback_strength": -1,
+          "knockback_range": 64,
+          "knockback_filters": {
+            "any_of": [
+              {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "==",
+                "value": "ghost"
+              },
+              {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "==",
+                "value": "undead"
+              },
+              {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "==",
+                "value": "monster"
+              }
+            ]
+          },
+          "damage_filters": {
+            "any_of": [
+              {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "==",
+                "value": "ghost"
+              },
+              {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "==",
+                "value": "undead"
+              },
+              {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "==",
+                "value": "monster"
+              }
+            ]
+          },
+          "cooldown_time": 0.1
+        },
+        "minecraft:timer": {
+          "looping": true,
+          "time": [8.0, 9.0],
+          "time_down_event": {
+            "event": "end_death",
+            "target": "self"
+          }
+        }
+      },
+      "done_death": {
+        "minecraft:behavior.knockback_roar": {
+          "priority": 0,
+          "duration": 0.05,
+          "attack_time": 0.05,
+          "knockback_damage": 50,
+          "knockback_strength": 55,
+          "knockback_range": 64,
+          "knockback_filters": {
+            "none_of": [
+              {
+                "test": "has_ability",
+                "subject": "other",
+                "operator": "==",
+                "value": "instabuild"
+              }
+            ]
+          },
+          "damage_filters": {
+            "any_of": [
+              {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "==",
+                "value": "ghost"
+              },
+              {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "==",
+                "value": "undead"
+              },
+              {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "==",
+                "value": "monster"
+              }
+            ]
+          },
+          "on_roar_end": {
+            "event": "after_death"
+          },
+          "cooldown_time": 0.1
+        }
+      },
+      "after_death": {
+        "minecraft:out_of_control": {
+        },
+        "minecraft:loot": {
+          "table": "loot_tables/entities/royal_ghost.json"
+        },
+        "minecraft:health": {
+          "min": 0,
+          "value": 0,
+          "max": 0
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:experience_reward": {
+        "on_death": 75.0
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 1,
+        "breathes_water": true
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/empty.json"
+      },
+      "minecraft:health": {
+        "value": 175,
+        "max": 175
+      },
+      "minecraft:boss": {
+        "should_darken_sky": true,
+        "name": "entity.entity:royal_ghost.name",
+        "hud_range": 125
+      },
+      "minecraft:collision_box": {
+        "width": 1.2,
+        "height": 2.3
+      },
+      "minecraft:attack": {
+        "damage": 8
+      },
+      "minecraft:movement": {
+        "value": 0.21
+      },
+      "minecraft:inventory": {
+        "container_type": "minecart_hopper",
+        "inventory_size": 5,
+        "restrict_to_owner": true
+      },
+      "minecraft:navigation.walk": {
+        "is_amphibious": true,
+        "avoid_sun": true
+      },
+      "minecraft:movement.basic": {
+      },
+      "minecraft:jump.static": {
+        "jump_power": 0.58
+      },
+      "minecraft:can_climb": {
+      },
+      "minecraft:scale": {
+        "value": 3
+      },
+      "minecraft:fire_immune": {
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "player"
+            },
+            "max_dist": 90
+          }
+        ],
+        "must_see": true
+      },
+      "minecraft:shooter": {
+        "def": "entity:ghost_ball"
+      },
+      "minecraft:behavior.ranged_attack": {
+        "priority": 2,
+        "attack_interval_min": 1.5,
+        "attack_interval_max": 1.9,
+        "speed_multiplier": 1.1,
+        "attack_radius": 65,
+        "burst_shots": 20,
+        "burst_interval": 0.25
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 4,
+        "speed_multiplier": 1
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 6,
+        "look_distance": 8.0
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 4
+      },
+      "minecraft:type_family": {
+        "family": [
+          "ghost",
+          "royal_ghost",
+          "boss_mob"
+        ]
+      },
+      "minecraft:behavior.summon_entity": {
+        "priority": 1,
+
+        "summon_choices": [
+          {
+            "min_activation_range": 0.0,
+            "max_activation_range": 45.0,
+            "cooldown_time": 10.0,
+            "weight": 4,
+            "cast_duration": 2.0,
+            "particle_color": "#FF664D59",
+            "start_sound_event": "spawn",
+            "sequence": [
+              {
+                "shape": "circle",
+                "target": "self",
+                "base_delay": 1.0,
+                "delay_per_summon": 0.02,
+                "num_entities_spawned": 3,
+                "entity_type": "entity:ghost<summoned_from_royal_ghost>",
+                "size": 5.0,
+                "sound_event": "spawn",
+                "entity_lifespan": 30.0
+              },
+              {
+                "shape": "circle",
+                "target": "self",
+                "base_delay": 0.25,
+                "delay_per_summon": 0.02,
+                "num_entities_spawned": 5,
+                "entity_type": "entity:ghost<summoned_from_royal_ghost>",
+                "size": 10.5,
+                "entity_lifespan": 30.0
+              }
+            ]
+          },
+          {
+            "min_activation_range": 0.0,
+            "max_activation_range": 25.0,
+            "weight": 3,
+            "cooldown_time": 7.0,
+            "cast_duration": 2.0,
+            "particle_color": "#FF664D59",
+            "start_sound_event": "spawn",
+            "sequence": [
+              {
+                "shape": "line",
+                "target": "self",
+                "base_delay": 1.3,
+                "delay_per_summon": 0.04,
+                "num_entities_spawned": 4,
+                "entity_type": "entity:ghoul<summoned_from_royal_ghost>",
+                "size": 15,
+                "entity_lifespan": 30.0
+              }
+            ]
+          },
+          {
+            "weight": 1,
+            "cooldown_time": 16.0,
+            "cast_duration": 5.0,
+            "sequence": [
+              {
+                "shape": "circle",
+                "target": "self",
+                "base_delay": 5.0,
+                "num_entities_spawned": 3,
+                "entity_type": "entity:reaper<summoned_from_royal_ghost>",
+                "summon_cap": 8,
+                "summon_cap_radius": 16.0,
+                "size": 2,
+                "sound_event": "spawn",
+                "entity_lifespan": 80.0
+              }
+            ]
+          },
+          {
+            "weight": 2,
+            "cooldown_time": 16.0,
+            "cast_duration": 5.0,
+            "sequence": [
+              {
+                "shape": "circle",
+                "target": "self",
+                "base_delay": 5.0,
+                "num_entities_spawned": 5,
+                "entity_type": "entity:reaper<summoned_from_royal_ghost>",
+                "summon_cap": 8,
+                "summon_cap_radius": 16.0,
+                "size": 2,
+                "sound_event": "spawn",
+                "entity_lifespan": 80.0
+              },
+              {
+                "shape": "circle",
+                "target": "self",
+                "base_delay": 0.25,
+                "delay_per_summon": 0.02,
+                "num_entities_spawned": 6,
+                "entity_type": "entity:ghost<summoned_from_royal_ghost>",
+                "size": 10.5,
+                "entity_lifespan": 30.0
+              }
+            ]
+          }
+        ]
+      },
+      "minecraft:follow_range": {
+        "value": 128,
+        "max": 128
+      },
+      "minecraft:behavior.send_event": {
+        "priority": 0,
+        "event_choices": [
+          {
+            "min_activation_range": 0.0,
+            "max_activation_range": 84.0,
+            "cooldown_time": 1.0,
+            "cast_duration": 2.0,
+            "weight": 1,
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "==",
+                  "value": "royal_ghost"
+                },
+                {
+                  "test": "has_component",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "minecraft:is_charged"
+                }
+              ]
+            },
+            "start_sound_event": "plop",
+            "sequence": [
+              {
+                "base_delay": 0.9,
+                "event": "force_despawn",
+                "sound_event": "spawn"
+              }
+            ]
+          }
+        ]
+      },
+      "minecraft:conditional_bandwidth_optimization": {
+        "default_values": {
+          "max_optimized_distance": 80.0,
+          "max_dropped_ticks": 0.0,
+          "use_motion_prediction_hints": true
+        }
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      }
+    },
+
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [ "spawned" ]
+        }
+      },
+      "ready": {
+        "remove": {
+          "component_groups": [ "spawned" ]
+        },
+        "add": {
+          "component_groups": [ "is_charged", "knockback_cooldown", "basic_area_attack" ]
+        }
+      },
+      "force_despawn": {
+        "add": {
+          "component_groups": [ "despawn" ]
+        }
+      },
+      "begin_death": {
+        "add": {
+          "component_groups": [ "start_death" ]
+        }
+      },
+      "on_death": {
+        "add": {
+          "component_groups": [ "death" ]
+        }
+      },
+      "end_death": {
+        "remove": {
+          "component_groups": [ "death" ]
+        },
+        "add": {
+          "component_groups": [ "done_death" ]
+        }
+      },
+      "after_death": {
+        "remove": {
+          "component_groups": [ "done_death" ]
+        },
+        "add": {
+          "component_groups": [ "after_death" ]
+        }
+      },
+      "on_knockback_start": {
+        "remove": {
+          "component_groups": [ "on_stomp_damage" ]
+        },
+        "add": {
+          "component_groups": [ "on_knockback" ]
+        }
+      },
+      "on_knockback_end": {
+        "remove": {
+          "component_groups": [ "on_knockback" ]
+        }
+      },
+
+      "do_stomp_damage": {
+        "remove": {
+          "component_groups": [ "on_knockback", "basic_area_attack" ]
+        },
+        "add": {
+          "component_groups": [ "on_stomp_damage" ]
+        }
+      },
+      "on_stomp_end": {
+        "remove": {
+          "component_groups": [ "on_stomp_damage" ]
+        },
+        "add": {
+          "component_groups": [ "basic_area_attack" ]
+        }
+      }
+    }
+  }
+}

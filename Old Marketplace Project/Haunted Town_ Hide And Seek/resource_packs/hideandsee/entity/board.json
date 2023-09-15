@@ -1,0 +1,28 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "entity:board",
+            "textures": {
+                "default": "textures/entity/board"
+            },
+            "materials": {
+                "default": "entity_alphatest"
+            },
+            "geometry": {
+                "default": "geometry.board"
+            },
+            "animations": {
+                "loop": "animation.loop"
+            },
+            "scripts": {
+                "animate": [
+                    { "loop": "query.is_alive" }
+                ]
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ]
+        }
+    }
+}

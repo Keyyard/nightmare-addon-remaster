@@ -1,0 +1,60 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "keyyard:glowing_snowglobe"
+		},
+		"events": {
+			"keyyard:set_rotation": {
+				"set_block_property": {
+					"keyyard:rotation": "(query.cardinal_facing_2d)"
+				}
+			},
+			"keyyard:turn_off": {
+				"set_block": {
+					"block_type": "keyyard:snowglobe"
+				}
+			}
+		},
+		"components": {
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "snowglobe",
+					"render_method": "blend"
+				}
+			},
+			"minecraft:on_interact": {
+				"event": "keyyard:turn_off",
+				"target": "self"
+			},
+			"minecraft:pick_collision": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					16,
+					16
+				]
+			},
+			"minecraft:entity_collision": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					16,
+					16
+				]
+			},
+			"minecraft:geometry": "geometry.snowglobe",
+			"minecraft:block_light_absorption": 0,
+			"minecraft:block_light_emission": 0.65,
+			"minecraft:destroy_time": 1
+		}
+	}
+}

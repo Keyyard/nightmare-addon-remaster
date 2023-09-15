@@ -1,0 +1,84 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "entity:royal_ghost",
+      "textures": {
+        "default": "textures/entity/royal_ghost"
+      },
+      "materials": { 
+        "default": "wither_boss_armor" 
+      },
+      "geometry": {
+        "default": "geometry.royal_ghost"
+      },
+      "scripts": {
+        "scalex": "query.can_power_jump ? variable.scale_xz * variable.base_scale : variable.base_scale",
+        "scaley": "query.can_power_jump ? variable.scale_y * variable.base_scale : variable.base_scale",
+        "scalez": "query.can_power_jump ? variable.scale_xz * variable.base_scale : variable.base_scale",
+        "pre_animation": [
+          "variable.base_scale = 1.1;",
+          "variable.wobble = 1.0 + math.sin(query.life_time * 5730);",
+          "variable.scale_xz = (1.0 + variable.base_scale * 0.4) * variable.wobble;",
+          "variable.scale_y = (1.0 + variable.base_scale * 0.1) / variable.wobble;",
+          "variable.tcos0 = (math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
+          "variable.spawn_trigger = query.is_ignited ? math.sin(query.life_time * (query.life_time * 33.0 + 180.0)) : 0.0;",
+          "variable.spin = query.is_ignited ? query.life_time * (query.life_time * 14.0 + 90.0) * 2.3 : 0.0;"
+        ],
+        "animate": [
+          { "death_effect_controller": "query.can_power_jump" },
+          { "spawn_effect_controller": "query.is_ignited && query.is_alive" },
+          { "spin": "query.is_ignited && query.is_alive" },
+          { "humanoid_big_head": "query.is_baby" },
+          { "look_at_target": "!query.is_ignited" },
+          "move",
+          { "riding.arms": "query.is_riding" },
+          { "riding.legs": "query.is_riding" },
+          "holding",
+          { "charging": "query.is_charging" },
+          "attack_controller",
+          { "brandish_spear": "variable.is_brandishing_spear" },
+          "bob",
+          { "damage_nearby_mobs": "variable.damage_nearby_mobs" },
+          { "use_item_progress": "(variable.use_item_interval_progress > 0.0) || (variable.use_item_startup_progress > 0.0)" },
+          { "swimming": "query.is_swimming" }
+        ]
+      },
+      "animations": {
+        "stomp_attack_sound_navigation_controller": "controller.animation.entity.royal_ghost.stomp_damage.sound_navigation",
+        "death_effect_controller": "controller.animation.entity.royal_ghost.death_effect",
+        "spawn_effect_controller": "controller.animation.entity.royal_ghost.spawn_effect",
+        "spin": "animation.entity.royal_ghost.spin",
+        "humanoid_big_head": "animation.humanoid.big_head",
+        "look_at_target": "controller.animation.humanoid.look_at_target",
+        "look_at_target_default": "animation.humanoid.look_at_target.default",
+        "look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+        "look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+        "move": "animation.humanoid.move",
+        "riding.arms": "animation.humanoid.riding.arms",
+        "riding.legs": "animation.humanoid.riding.legs",
+        "holding": "animation.humanoid.holding",
+        "brandish_spear": "animation.humanoid.brandish_spear",
+        "charging": "animation.humanoid.charging",
+        "bob": "animation.humanoid.bob",
+        "damage_nearby_mobs": "animation.humanoid.damage_nearby_mobs",
+        "use_item_progress": "animation.humanoid.use_item_progress",
+        "attack_controller": "controller.animation.drowned.attack.rotations",
+        "zombie_attack_bare_hand": "animation.zombie.attack_bare_hand",
+        "attack_rotations": "animation.drowned.attack.rotations",
+        "swimming": "animation.zombie.swimming"
+      },
+      "sound_effects": {
+        "spawn": "mob.wither.spawn",
+        "death": "mob.wither.death",
+        "stomp_attack": "mob.royal_ghost.stomp_attack"
+      },
+      "render_controllers": [ "controller.render.default" ],
+      "enable_attachables": true,
+      "spawn_egg": {
+        "base_color": "#FFFF00",
+        "overlay_color": "#111133"
+      }
+    }
+  }
+}

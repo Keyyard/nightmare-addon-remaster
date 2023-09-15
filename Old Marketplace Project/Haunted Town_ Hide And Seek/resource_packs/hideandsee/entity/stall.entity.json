@@ -1,0 +1,20 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "entity:stall",
+            "textures": {
+                "default": "textures/entity/stall"
+            },
+            "materials": {
+                "default": "entity_alphatest"
+            },
+            "geometry": {
+                "default": "geometry.stall"
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ]
+        }
+    }
+}

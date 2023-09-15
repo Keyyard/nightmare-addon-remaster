@@ -1,0 +1,42 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": [
+			"Keyyard"
+		],
+		"generated_with": {
+			"bridge": [
+				"2.5.2"
+			],
+			"dash": [
+				"0.10.8"
+			]
+		}
+	},
+	"header": {
+		"name": "pack.name",
+		"description": "pack.description",
+		"min_engine_version": [
+			1,
+			17,
+			0
+		],
+		"uuid": "bb8f33cd-117b-4881-b87c-2a28432ff316",
+		"version": [
+			1,
+			0,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "resources",
+			"uuid": "ec715ee0-ff3d-4dda-b63b-958bc6b9bcef",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	]
+}

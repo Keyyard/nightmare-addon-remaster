@@ -1,0 +1,44 @@
+{
+  "format_version": "1.14.0",
+  "sound_definitions": {
+    "mob.ghost.sound": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mob/ghost/night"
+      ]
+    },
+    "mob.ghoul.roar": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mob/ghoul/roar"
+      ]
+    },
+    "mob.tombstone.summoned": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mob/tombstone/summoned"
+      ]
+    },
+    "mob.reaper.attack": {
+      "category": "hostile",
+      "sounds": [
+        "sounds/mob/reaper/attack"
+      ]
+    },
+    "mob.royal_ghost.despawn_other": {
+      "category": "hostile",
+      "max_distance": 96.0,
+      "sounds": [
+        "sounds/mob/royal_ghost/despawn_other"
+      ]
+    },
+    "mob.royal_ghost.stomp_attack": {
+      "category": "hostile",
+      "max_distance": 96.0,
+      "sounds": [
+        "sounds/mob/royal_ghost/stomp_attack_1",
+        "sounds/mob/royal_ghost/stomp_attack_2"
+      ]
+    }
+  }
+}

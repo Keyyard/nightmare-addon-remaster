@@ -1,0 +1,29 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.radio": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"play": "query.is_shaking"
+						}
+					],
+					"sound_effects": []
+				},
+				"play": {
+					"sound_effects": [
+						{
+							"effect": "play"
+						}
+					],
+					"transitions": [
+						{
+							"default": "!query.is_shaking"
+						}
+					]
+				}
+			}
+		}
+	}
+}

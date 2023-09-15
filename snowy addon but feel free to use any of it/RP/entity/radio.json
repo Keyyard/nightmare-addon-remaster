@@ -1,0 +1,30 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "keyyard:radio",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/radio"
+			},
+			"geometry": {
+				"default": "geometry.radio"
+			},
+			"render_controllers": [
+				"controller.render.radio"
+			],
+			"spawn_egg": {
+				"texture": "keyyard_radio_egg",
+				"texture_index": 0
+			},
+			"sound_effects": {
+				"play": "christmas.song"
+			},
+			"animations": {
+				"basic": "controller.animation.radio"
+			}
+		}
+	}
+}

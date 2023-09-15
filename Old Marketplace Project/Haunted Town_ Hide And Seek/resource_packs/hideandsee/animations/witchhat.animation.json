@@ -1,0 +1,21 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.witchhat": {
+            "loop": true,
+            "bones": {
+                "witchhat": {
+                    "scale": 1.1
+                }
+            }
+        },
+        "animation.witchhat_fp": {
+            "loop": true,
+            "bones": {
+                "witchhat": {
+                    "scale": 0
+                }
+            }
+        }
+    }
+}

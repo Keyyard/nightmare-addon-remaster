@@ -1,0 +1,8 @@
+pack.name=Snowglobe RP
+pack.description=by keyyard and josh
+tile.keyyard:glowing_snowglobe.name=Snowglobe
+tile.keyyard:glowing_snowglobe=Snowglobe
+tile.keyyard:snowglobe=Snowglobe
+tile.keyyard:snowglobe.name=Snowglobe
+item.spawn_egg.entity.keyyard:radio.name=Spawn Radio
+entity.keyyard:radio.name=Radio

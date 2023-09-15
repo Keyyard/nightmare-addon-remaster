@@ -1,0 +1,29 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "entity:howtoplay",
+            "textures": {
+                "default": "textures/entity/howtoplay"
+            },
+            "materials": {
+                "default": "entity_alphatest"
+            },
+            "geometry": {
+                "default": "geometry.start"
+            },
+            "animations": {
+                "pressed": "animation.pressed",
+                "button": "controller.animation.button"
+            },
+            "scripts": {
+                "animate": [
+                    "button"
+                ]
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ]
+        }
+    }
+}
