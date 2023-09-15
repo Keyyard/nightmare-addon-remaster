@@ -1,0 +1,52 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.ghost": {
+      "geometry": "geometry.default",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.default" ],
+      "overlay_color": {
+        "r": "query.has_target ? math.min(math.cos(query.life_time * 30.0) * 0.5 + 0.9, 1.0) : (variable.remaining_life ? math.min(math.max(variable.remaining_life / query.life_span, 0.08), 0.7) : this)",
+        "g": "query.has_target ? 0.4 : (variable.remaining_life ? math.min(math.max(variable.remaining_life / query.life_span, 0.1) + 0.25, 1.0) : this)",
+        "b": "query.has_target ? 0.4 : (variable.remaining_life ? math.min(math.max(variable.remaining_life / query.life_span, 0.08), 0.7) : this)",
+        "a": "query.has_target || query.life_span ? 0.45 : this"
+      },
+      "light_color_multiplier": "query.life_span ? 0.9 : math.cos(query.life_time * 40.0) * 0.25 + 0.4",
+      "ignore_lighting": true
+    },
+
+    "controller.render.ghoul.default": {
+      "geometry": "geometry.default",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.default" ]
+    },
+
+    "controller.render.ghoul.glow": {
+      "geometry": "geometry.default",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.default" ],
+      "overlay_color": {
+        "r": "variable.remaining_life ? math.min(math.max(variable.remaining_life / query.life_span, 0.08), 0.7) : 0.0",
+        "g": "variable.remaining_life ? math.min(math.max(variable.remaining_life / query.life_span, 0.1) + 0.25, 1.0) : 0.0",
+        "b": "variable.remaining_life ? math.min(math.max(variable.remaining_life / query.life_span, 0.08), 0.7) : 0.0",
+        "a": "query.life_span ? 0.45 : 0.0"
+      },
+      "light_color_multiplier": "query.life_span ? 1.2 : 0.9",
+      "ignore_lighting": true
+    },
+
+    "controller.render.reaper": {
+      "geometry": "geometry.default",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.default" ],
+      "overlay_color": {
+        "r": "variable.remaining_life ? math.min(math.max(variable.remaining_life / query.life_span, 0.08), 0.7) : 0.0",
+        "g": "variable.remaining_life ? math.min(math.max(variable.remaining_life / query.life_span, 0.1) + 0.25, 1.0) : 0.0",
+        "b": "variable.remaining_life ? math.min(math.max(variable.remaining_life / query.life_span, 0.08), 0.7) : 0.0",
+        "a": "query.life_span ? 0.45 : 0.0"
+      },
+      "light_color_multiplier": "query.life_span ? 0.9 : math.cos(query.life_time * 40.0) * 0.25 + 0.4",
+      "ignore_lighting": true
+    }
+  }
+}

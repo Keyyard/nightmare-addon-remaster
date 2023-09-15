@@ -1,0 +1,18 @@
+{
+  "resource_pack_name": "vanilla",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "texture:demonic_blade": {
+      "textures": "textures/items/demonic_blade"
+    },
+    "texture:cursed_spell_paper": {
+      "textures": "textures/items/cursed_spell_paper"
+    },
+    "texture:hell_ingot": {
+      "textures": "textures/items/hell_ingot"
+    },
+    "texture:hell_trident": {
+      "textures": "textures/items/hell_trident"
+    }
+  }
+}

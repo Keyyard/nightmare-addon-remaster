@@ -1,0 +1,21 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "recipe:hell_ingot_from_blaze_powder"
+    },
+
+    "tags": [ "crafting_table" ],
+    "ingredients": [
+      {
+        "item": "minecraft:netherite_ingot"
+      },
+      {
+        "item": "minecraft:blaze_powder"
+      }
+    ],
+    "result": {
+      "item": "item:hell_ingot"
+    }
+  }
+}

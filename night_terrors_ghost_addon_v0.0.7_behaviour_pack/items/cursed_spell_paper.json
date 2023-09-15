@@ -1,0 +1,18 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "identifier": "item:cursed_spell_paper",
+      "category": "items"
+    },
+    "components": {
+      "minecraft:max_stack_size": 1,
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.items"
+      },
+      "minecraft:icon": {
+        "texture": "texture:cursed_spell_paper"
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+	"geometry.tombstone": {
+		"texturewidth": 128,
+		"textureheight": 128,
+		"visible_bounds_width": 2,
+		"visible_bounds_height": 2,
+		"visible_bounds_offset": [0, 1, 0],
+		"bones": [
+			{
+				"name": "tomb",
+				"pivot": [0, 0, 0],
+				"mirror": true,
+				"cubes": [
+					{"origin": [-5, 0, -9], "size": [10, 1, 18], "uv": [45, 86]},
+					{"origin": [-1, 1, 7], "size": [2, 18, 2], "uv": [120, 108], "mirror": false},
+					{"origin": [-7, 12, 7], "size": [14, 2, 2], "uv": [0, 20], "mirror": false}
+				]
+			}
+		]
+	}
+}
