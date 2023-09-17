@@ -7,8 +7,8 @@
 				"texture_width": 256,
 				"texture_height": 256,
 				"visible_bounds_width": 10,
-				"visible_bounds_height": 7,
-				"visible_bounds_offset": [0, 2.5, 0]
+				"visible_bounds_height": 10,
+				"visible_bounds_offset": [0, 4, 0]
 			},
 			"bones": [
 				{
@@ -23,16 +23,23 @@
 				{
 					"name": "UpperFace",
 					"parent": "Head",
-					"pivot": [0, 0, 0],
+					"pivot": [-2.25, 68.25, -7.25],
 					"cubes": [
-						{"origin": [-6, 60, -13], "size": [13, 11, 11], "uv": [76, 0]},
+						{"origin": [-6, 60, -13], "size": [13, 11, 11], "uv": [76, 0]}
+					]
+				},
+				{
+					"name": "HeadSaw",
+					"parent": "UpperFace",
+					"pivot": [-5, 71, -7],
+					"cubes": [
 						{"origin": [-9, 67, -8], "size": [8, 8, 2], "uv": [62, 0]}
 					]
 				},
 				{
 					"name": "UnderFace",
 					"parent": "Head",
-					"pivot": [0, 0, 0],
+					"pivot": [0.5, 53.73583, -6.33383],
 					"cubes": [
 						{"origin": [-6, 48, -8], "size": [13, 13, 8], "pivot": [0.5, 47.5, -3], "rotation": [20, 0, 0], "uv": [88, 22]}
 					]
@@ -40,7 +47,7 @@
 				{
 					"name": "LeftLeg",
 					"parent": "Full",
-					"pivot": [0, 0, 0],
+					"pivot": [-5, 25.5, 2],
 					"cubes": [
 						{"origin": [-8, 0, -1], "size": [6, 27, 6], "uv": [88, 57]}
 					]
@@ -48,15 +55,15 @@
 				{
 					"name": "RightLeg",
 					"parent": "Full",
-					"pivot": [0, 0, 0],
+					"pivot": [5, 24.62455, 0.78844],
 					"cubes": [
-						{"origin": [2, 0, -1], "size": [6, 27, 6], "uv": [24, 75]}
+						{"origin": [2, 0.12455, -2.21156], "size": [6, 27, 6], "uv": [24, 75]}
 					]
 				},
 				{
 					"name": "RightArm",
 					"parent": "Full",
-					"pivot": [0, 0, 0]
+					"pivot": [12, 56, 0]
 				},
 				{
 					"name": "Weapon",
@@ -76,7 +83,7 @@
 				{
 					"name": "ArmCrystal",
 					"parent": "RightArm",
-					"pivot": [18.5, 29.5, 2],
+					"pivot": [15.15346, 56.56221, 2],
 					"cubes": [
 						{"origin": [12, 7, -1], "size": [6, 51, 6], "uv": [0, 75]},
 						{"origin": [17, 28, 0], "size": [9, 3, 4], "pivot": [18.5, 29.5, 2], "rotation": [0, 0, -17.5], "uv": [24, 108]},
@@ -87,7 +94,7 @@
 				{
 					"name": "LeaftArm",
 					"parent": "Full",
-					"pivot": [0, 0, 0],
+					"pivot": [-13.15346, 57.56221, 2],
 					"cubes": [
 						{"origin": [-18, 7, -1], "size": [6, 51, 6], "uv": [64, 69]},
 						{"origin": [-26, 28, 0], "size": [9, 3, 4], "pivot": [-18.5, 29.5, 2], "rotation": [0, 0, 17.5], "uv": [88, 43]},
