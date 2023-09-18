@@ -1,0 +1,16 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.broken.attack": {
+			"animation_length": 0.16667,
+			"bones": {
+				"RightArm": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.1667": [-70, 0, 0]
+					}
+				}
+			}
+		}
+	}
+}
