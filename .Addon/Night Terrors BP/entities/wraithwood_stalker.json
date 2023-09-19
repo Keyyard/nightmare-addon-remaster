@@ -2,59 +2,42 @@
   "format_version": "1.20.10",
   "minecraft:entity": {
     "description": {
-      "identifier": "mob:broken",
+      "identifier": "mob:wraithwood_stalker",
       "is_spawnable": true,
       "is_summonable": true,
       "is_experimental": false
-    },
-    "component_groups": {
-      "scale_up": {
-        "minecraft:scale": {
-          "value": 4.0
-        }
-      },
-      "scale_down": {
-        "minecraft:scale": {
-          "value": 0.25
-        }
-      },
-      "default": {
-        "minecraft:scale": {
-          "value": 1
-        }
-      },
-	  "random": {
-		"minecraft:timer": {
-			"time":[
-				1,
-				20
-			],
-			"looping": true,
-			"time_down_event": {
-				"event": "random_scale"
-			}
-		}
-	  }
     },
     "components": {
       "minecraft:experience_reward": {
         "on_death": "query.is_powered ? 0.0 : (query.last_hit_by_player ? math.random(6.0, 8.0) : 0.0)"
       },
       "minecraft:type_family": {
-        "family": ["broken", "monster", "mob"]
+        "family": ["wraithwood_stalker", "monster", "mob"]
       },
       "minecraft:health": {
         "value": 10,
         "max": 10
       },
+      "minecraft:behavior.stalk_and_pounce_on_target": {
+        "interest_time": 8,
+        "leap_distance": 1.8,
+        "leap_height": 1.1,
+        "max_stalk_dist": 20,
+        "pounce_max_dist": 8,
+        "set_persistent": false,
+        "stalk_speed": 1.2,
+        "strike_dist": 6,
+        "stuck_time": 1,
+        "leap_dist": 8
+      },
       "minecraft:collision_box": {
-        "width": 0.9,
+        "width": 0.6,
         "height": 1.8
       },
       "minecraft:attack": {
         "damage": 3,
         "effect_name": "wither",
-        "effect_duration": 2
+        "effect_duration": 1
       },
       "minecraft:movement": {
         "value": 0.23
@@ -139,53 +122,6 @@
       }
     },
     "events": {
-		"minecraft:entity_spawned": {
-			"add": {
-				"component_groups": [
-					"default", "random"
-				]
-			}
-		},
-		"random": {
-			"randomize": [
-				{
-					"add": {
-						"component_groups": [
-							"scale_up"
-						]
-					},
-					"remove": {
-						"component_groups": [
-							"default", "scale_down"
-						]
-					}
-				},
-				{
-					"add": {
-						"component_groups": [
-							"scale_down"
-						]
-					},
-					"remove": {
-						"component_groups": [
-							"default", "scale_up"
-						]
-					}
-				},
-				{
-					"add": {
-						"component_groups": [
-							"default"
-						]
-					},
-					"remove": {
-						"component_groups": [
-							"scale_up", "scale_down"
-						]
-					}
-				}
-			]
-		}
 	}
   }
 }

@@ -1,2 +1,4 @@
 pack.name=Night Terrors RP
 pack.description=
+
+entity.mob:wraithwood_stalker.name=Wraithwood Stalker

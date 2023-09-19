@@ -2,22 +2,22 @@
 	"format_version": "1.10.0",
 	"minecraft:client_entity": {
 		"description": {
-			"identifier": "mob:broken",
+			"identifier": "mob:eyespecter",
 			"materials": {
 				"default": "entity_alphatest"
 			},
 			"textures": {
-				"default": "textures/entity/broken"
+				"default": "textures/entity/eyespecter"
 			},
 			"geometry": {
-				"default": "geometry.broken"
+				"default": "geometry.eyespecter"
 			},
 			"render_controllers": [
-				"controller.render.broken"
+				"controller.render.default"
 			],
 			"spawn_egg": {
-				"texture": 0,
-				"texture_index": 0
+				"base_color": "#232323",
+				"overlay_color": "#1c0202"
 			}
 		}
 	}
