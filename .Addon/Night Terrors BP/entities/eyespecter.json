@@ -20,8 +20,54 @@
           "value": 1
         }
       },
-
+      "pull": {
+        "minecraft:behavior.knockback_roar": {
+          "priority": 0,
+          "duration": 1,
+          "attack_time": 1,
+          "knockback_damage": 0,
+          "knockback_strength": -2,
+          "knockback_range": 8,
+          "knockback_filters": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "==",
+            "value": "player"
+          },
+          "cooldown_time": 5
+        }
+      },
       "angry1": {
+        "minecraft:entity_sensor": {
+          "sensor_range": 4,
+          "relative_range": false,
+          "require_all": true,
+          "event_filters": {
+            "none_of": [
+              { "test": "is_family", "subject": "other", "value": "mob" },
+              {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "none_of": {
+                      "test": "has_ability",
+                      "subject": "other",
+                      "value": "instabuild"
+                    }
+                  }
+                ]
+              }
+            ],
+            "test": "distance_to_nearest_player",
+            "operator": "<",
+            "value": 4
+          },
+          "event": "pull"
+        },
         "minecraft:angry": {
           "duration": 25,
           "calm_event": {
@@ -46,7 +92,7 @@
           "must_see": true
         },
         "minecraft:timer": {
-          "time": [1, 1],
+          "time": [0.05, 0.1],
           "looping": true,
           "time_down_event": {
             "event": "angry2"
@@ -55,7 +101,6 @@
         "minecraft:scale": {
           "value": 2.25
         },
-		"minecraft:is_charged": {},
         "minecraft:movement": {
           "value": 0.45
         },
@@ -65,7 +110,7 @@
       },
       "angry2": {
         "minecraft:timer": {
-          "time": [1, 1],
+          "time": [1, 5],
           "looping": true,
           "time_down_event": {
             "event": "angry1"
@@ -140,6 +185,10 @@
         "search_radius": 64.0,
         "set_target": true,
         "look_cooldown": 16.0,
+        "look_event": {
+          "event": "mob:become_angry",
+          "target": "self"
+        },
         "filters": {
           "all_of": [
             {
@@ -240,6 +289,11 @@
       "angry1": {
         "add": {
           "component_groups": ["angry1"]
+        }
+      },
+      "pull": {
+        "add": {
+          "component_groups": ["pull"]
         }
       },
       "angry2": {
