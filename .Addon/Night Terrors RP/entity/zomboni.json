@@ -2,18 +2,18 @@
 	"format_version": "1.10.0",
 	"minecraft:client_entity": {
 		"description": {
-			"identifier": "bridge:zomboni",
+			"identifier": "mob:zomboni",
 			"materials": {
 				"default": "entity_alphatest"
 			},
 			"textures": {
-				"default": "textures/entity/texture"
+				"default": "textures/entity/zomboni"
 			},
 			"geometry": {
 				"default": "geometry.zomboni"
 			},
 			"render_controllers": [
-				"controller.render.zomboni"
+				"controller.render.default"
 			],
 			"spawn_egg": {
 				"base_color": "#000000",
