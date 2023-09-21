@@ -1,0 +1,12 @@
+pack.name=Night Terrors RP
+pack.description=
+
+entity.mob:wraithwood_stalker.name=Wraithwood Stalker
+item.spawn_egg.entity.bridge:eye_pet.name=Spawn EyePet
+entity.bridge:eye_pet.name=EyePet
+item.spawn_egg.entity.bridge:skelifish.name=Spawn Skeli Fish
+entity.bridge:skelifish.name=Skeli Fish
+item.spawn_egg.entity.bridge:zomboni.name=Spawn Zomboni
+entity.bridge:zomboni.name=Zomboni
+item.spawn_egg.entity.bridge:zomboni.name=Spawn Zomboni
+entity.bridge:zomboni.name=Zomboni
