@@ -21,7 +21,7 @@
 				"width":0.6
 			},
 			"minecraft:movement":{
-				"value":0.35
+				"value":0.23
 			},
 			"minecraft:.open_door":{
 				"priority":6,
