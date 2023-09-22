@@ -1,7 +1,6 @@
 # MOBS LIST
 
 - [Axequaker](#axequaker)
-- [Eye Pet](#eye-pet)
 - [Eye Specter](#eye-specter)
 - [Ghost](#ghost)
 - [Ghoul](#ghoul)
@@ -11,6 +10,7 @@
 
 # FRIENDLY MOBS
 
+- [Eye Pet](#eye-pet)
 - [Skelifish](#skelifish)
 - [Tombstone](#tombstone)
 
