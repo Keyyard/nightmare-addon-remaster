@@ -1,0 +1,446 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "entity:ghost",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+
+    "component_groups": {
+      "summoned_by_royal_ghost": {
+        "minecraft:damage_sensor": {
+          "triggers": {
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "operator": "==",
+                    "value": "royal_ghost"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "damager",
+                    "operator": "==",
+                    "value": "ghost_ball"
+                  }
+                ]
+              }
+            },
+            "deals_damage": false
+          }
+        },
+        "minecraft:scale": {
+          "value": 0.95
+        },
+        "minecraft:attack": {
+          "damage": 1
+        },
+        "minecraft:is_tamed": {
+        },
+        "minecraft:behavior.owner_hurt_target": {
+          "priority": 1
+        },
+        "minecraft:behavior.owner_hurt_by_target": {
+          "priority": 1
+        },
+        "minecraft:is_charged": {
+        },
+        "minecraft:is_ignited": {
+        },
+        "minecraft:behavior.melee_attack": {
+          "priority": 2,
+          "speed_multiplier": 1.4,
+          "track_target": true,
+          "reach_multiplier": 2.5,
+          "cooldown_time": 2
+        },
+        "minecraft:movement": {
+          "value": 0.17
+        },
+        "minecraft:flying_speed": {
+          "value": 0.19
+        },
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 1,
+          "within_radius": 45,
+          "reselect_targets": true,
+          "entity_types": [
+            {
+              "filters": {
+                "any_of": [
+                  {
+                    "all_of": [
+                      {
+                        "test": "has_target",
+                        "subject": "other",
+                        "operator": "==",
+                        "value": true
+                      },
+                      {
+                        "all_of": [
+                          {
+                            "test": "is_family",
+                            "subject": "other",
+                            "operator": "!=",
+                            "value": "player"
+                          },
+                          {
+                            "test": "is_family",
+                            "subject": "other",
+                            "operator": "!=",
+                            "value": "ghost"
+                          },
+                          {
+                            "test": "is_family",
+                            "subject": "other",
+                            "operator": "!=",
+                            "value": "ghoul"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "snowgolem"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "irongolem"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "villager"
+                  }
+                ]
+              },
+              "max_dist": 45
+            }
+          ],
+          "must_see": true
+        },
+        "minecraft:conditional_bandwidth_optimization": {
+          "default_values": {
+            "max_optimized_distance": 80.0,
+            "max_dropped_ticks": 0.0,
+            "use_motion_prediction_hints": true
+          }
+        }
+      },
+      "summoned_in_village": {
+        "minecraft:scale": {
+          "value": 1.3
+        },
+        "minecraft:persistent": {
+        },
+        "minecraft:behavior.move_indoors": {
+          "priority": 4,
+          "speed_multiplier": 0.9,
+          "timeout_cooldown": 2.0
+        },
+        "minecraft:behavior.stroll_towards_village": {
+          "priority": 3,
+          "speed_multiplier": 0.9,
+          "goal_radius": 2.0,
+          "cooldown_time": 2.0,
+          "search_range": 64,
+          "start_chance": 0.8
+        },
+        "minecraft:ambient_sound_interval": {
+          "event_name": "ambient.in.village",
+          "value": 2.0,
+          "range": 4.0
+        },
+        "minecraft:behavior.move_to_village": {
+          "priority": 6,
+          "speed_multiplier": 1.2,
+          "goal_radius": 2.0
+        },
+        "minecraft:teleport": {
+          "random_teleports": false,
+          "target_distance": 35,
+          "target_teleport_chance": 1.0,
+          "light_teleport_chance": 0.9
+        },
+        "minecraft:dweller": {
+          "dwelling_type": "village",
+          "dweller_role": "inhabitant",
+          "update_interval_base": 60,
+          "update_interval_variant": 40,
+          "can_find_poi": true,
+          "can_migrate": true,
+          "first_founding_reward": 5
+        },
+        "minecraft:behavior.flee_sun": {
+          "priority": 2,
+          "speed_multiplier": 1.5
+        },
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 1,
+          "within_radius": 45,
+          "reselect_targets": true,
+          "entity_types": [
+            {
+              "filters": {
+                "any_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "undead"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "snowgolem"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "irongolem"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "villager"
+                  }
+                ]
+              },
+              "max_dist": 45
+            }
+          ],
+          "must_see": true
+        },
+        "minecraft:movement": {
+          "value": 0.19
+        },
+        "minecraft:attack": {
+          "damage": 3
+        },
+        "minecraft:flying_speed": {
+          "value": 0.18
+        },
+        "minecraft:health": {
+          "value": 6,
+          "max": 6
+        },
+        "minecraft:conditional_bandwidth_optimization": {
+          "default_values": {
+            "max_optimized_distance": 80.0,
+            "max_dropped_ticks": 0.0,
+            "use_motion_prediction_hints": true
+          }
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:experience_reward": {
+        "on_death": "query.is_powered ? 0.0 : (query.last_hit_by_player ? 4.0 : 0.0)"
+      },
+      "minecraft:collision_box": {
+        "width": 0.8,
+        "height": 1.8
+      },
+      "minecraft:type_family": {
+        "family": [ "ghost", "mob" ]
+      },
+      "minecraft:burns_in_daylight": {
+      },
+      "minecraft:movement": {
+        "value": 0.13
+      },
+      "minecraft:attack": {
+        "damage": 0
+      },
+      "minecraft:flying_speed": {
+        "value": 0.14
+      },
+      "minecraft:behavior.open_door": {
+        "priority": 6,
+        "close_door_after": true
+      },
+      "minecraft:annotation.open_door": {
+      },
+      "minecraft:navigation.hover": {
+        "can_path_over_water": true,
+        "can_sink": false,
+        "can_pass_doors": true,
+        "can_open_doors": true,
+        "can_open_iron_doors": true,
+        "can_path_from_air": true,
+        "avoid_water": true,
+        "avoid_damage_blocks": true,
+        "avoid_sun": true
+      },
+      "minecraft:can_fly": {
+      },
+      "minecraft:movement.hover": {
+      },
+      "minecraft:jump.static": {
+      },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.random_hover": {
+        "priority": 8,
+        "xz_dist": 9,
+        "y_dist": 10,
+        "y_offset": -1,
+        "interval": 1,
+        "hover_height": [4, 15]
+      },
+      "minecraft:equip_item": {
+      },
+      "minecraft:behavior.equip_item": {
+        "priority": 2
+      },
+      "minecraft:behavior.pickup_items": {
+        "priority": 2,
+        "max_dist": 20,
+        "goal_radius": 2,
+        "speed_multiplier": 1.3,
+        "can_pickup_any_item": true,
+        "track_target": true
+      },
+      "minecraft:shareables": {
+        "all_items": true,
+        "items": [
+          { "item": "minecraft:apple", "priority": 0 },
+          { "item": "minecraft:appleEnchanted", "priority": 0 }
+        ]
+      },
+      "minecraft:inventory": {
+        "container_type": "minecart_hopper",
+        "inventory_size": 5,
+        "restrict_to_owner": true
+      },
+      "minecraft:teleport": {
+        "random_teleports": true,
+        "max_random_teleport_time": 15,
+        "random_teleport_cube": [ 24, 24, 24 ],
+        "target_distance": 35,
+        "target_teleport_chance": 1.0,
+        "light_teleport_chance": 0.6
+      },
+      "minecraft:health": {
+        "value": 3,
+        "max": 3
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": {
+              "test": "in_water_or_rain",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "cause": "drowning",
+            "damage_per_tick": 1
+          }
+        ]
+      },
+      "minecraft:behavior.melee_attack": {
+        "priority": 1,
+        "speed_multiplier": 1.2,
+        "track_target": true,
+        "reach_multiplier": 3.5,
+        "cooldown_time": 13
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "within_radius": 35,
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "snowgolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "villager"
+                }
+              ]
+            },
+            "max_dist": 35
+          }
+        ],
+        "must_see": true
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {
+        }
+      },
+      "minecraft:follow_range": {
+        "value": 64,
+        "max": 64
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:conditional_bandwidth_optimization": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      }
+    },
+
+    "events": {
+      "minecraft:entity_spawned": {
+        "sequence": [
+          {
+            "filters": {
+              "test": "is_in_village",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "remove": {
+              "component_groups": [ "summoned_by_royal_ghost" ]
+            },
+            "add": {
+              "component_groups": [ "summoned_in_village" ]
+            }
+          }
+        ]
+      },
+      "summoned_from_royal_ghost": {
+        "remove": {
+          "component_groups": [ "summoned_in_village" ]
+        },
+        "add": {
+          "component_groups": [ "summoned_by_royal_ghost" ]
+        }
+      }
+    }
+  }
+}

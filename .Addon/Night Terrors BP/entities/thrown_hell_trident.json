@@ -1,0 +1,137 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "entity:thrown_hell_trident",
+      "runtime_identifier": "minecraft:ender_pearl",
+      "is_spawnable": false,
+      "is_summonable": false,
+      "is_experimental": false
+    },
+
+    "component_groups": {
+      "despawn": {
+        "minecraft:instant_despawn": {
+        }
+      },
+      "drop_item": {
+        "minecraft:spawn_entity": {
+          "entities": {
+            "min_wait_time": 0.0,
+            "max_wait_time": 0.0,
+            "spawn_item": "item:hell_trident",
+            "single_use": true
+          }
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 0.0,
+          "time_down_event": {
+            "event": "event:despawn",
+            "target": "self"
+          }
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.3,
+        "height": 0.4
+      },
+      "minecraft:projectile": {
+        "on_hit": {
+          "impact_damage": {
+            "damage": 10,
+            "knockback": true,
+            "semi_random_diff_damage": false,
+            "destroy_on_hit": false
+          },
+          "mob_effect": {
+            "effect": "slowness",
+            "durationeasy": 5,
+            "durationnormal": 5,
+            "durationhard": 5,
+            "amplifier": 3
+          },
+          "particle_on_hit": {
+            "particle_type": "spit",
+            "on_entity_hit": true,
+            "on_other_hit": true
+          },
+          "stick_in_ground": {
+            "shake_time": 1.2
+          }
+        },
+        "liquid_inertia": 0.99,
+        "hit_sound": "item.trident.hit",
+        "hit_ground_sound": "item.trident.hit_ground",
+        "power": 5,
+        "gravity": 0.09,
+        "uncertainty_base": 1,
+        "uncertainty_multiplier": 0,
+        "stop_on_hurt": true,
+        "anchor": 1,
+        "should_bounce": true,
+        "crit_particle_on_hurt": true,
+        "multiple_targets": true,
+        "catch_fire": true,
+        "angle_offset": -20.0,
+        "offset": [ 0, 0.1, 0 ]
+      },
+      "minecraft:entity_sensor": {
+        "sensor_range": 1.25,
+        "minimum_count": 1,
+        "event_filters": {
+          "all_of": [
+            {
+              "test": "is_owner",
+              "subject": "other",
+              "operator": "==",
+              "value": true
+            },
+            {
+              "test": "is_moving",
+              "subject": "self",
+              "operator": "==",
+              "value": false
+            },
+            {
+              "test": "has_component",
+              "subject": "self",
+              "operator": "!=",
+              "value": "minecraft:spawn_entity"
+            }
+          ]
+        },
+        "event": "event:on_drop_item"
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:conditional_bandwidth_optimization": {
+        "default_values": {
+          "max_optimized_distance": 80.0,
+          "max_dropped_ticks": 10,
+          "use_motion_prediction_hints": true
+        }
+      }
+    },
+
+    "events": {
+      "event:on_drop_item": {
+        "add": {
+          "component_groups": [ "drop_item" ]
+        }
+      },
+      "event:despawn": {
+        "add": {
+          "component_groups": [ "despawn" ]
+        }
+      }
+    }
+  }
+}

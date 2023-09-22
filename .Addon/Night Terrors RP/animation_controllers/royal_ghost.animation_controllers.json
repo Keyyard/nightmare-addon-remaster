@@ -1,0 +1,109 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.entity.royal_ghost.spawn_effect": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "trigger_event": "variable.spawn_trigger < 0.0"
+            }
+          ]
+        },
+        "trigger_event": {
+          "sound_effects": [
+            {
+              "effect": "spawn"
+            }
+          ],
+          "transitions": [
+            {
+              "default": "variable.spawn_trigger >= 0.0"
+            }
+          ]
+        }
+      }
+    },
+
+    "controller.animation.entity.royal_ghost.death_effect": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "trigger_event": "query.can_power_jump"
+            }
+          ]
+        },
+        "trigger_event": {
+          "sound_effects": [
+            {
+              "effect": "death"
+            }
+          ],
+          "transitions": [
+            {
+              "default": "!query.can_power_jump"
+            }
+          ]
+        }
+      }
+    },
+
+    "controller.animation.entity.royal_ghost.stomp_damage.sound_navigation": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "on_air": "!query.is_on_ground && query.vertical_speed > 0.0"
+            }
+          ]
+        },
+        "on_air": {
+          "on_entry": [
+            "variable.initial_y_position = query.position(1);"
+          ],
+          "transitions": [
+            {
+              "on_fall": "query.vertical_speed <= 0.0"
+            }
+          ]
+        },
+        "on_fall": {
+          "on_entry": [
+            "variable.fall_y_position = query.position(1);"
+          ],
+          "transitions": [
+            {
+              "trigger_event": "query.vertical_speed < -2.1 && (variable.fall_y_position - variable.initial_y_position) > 5.0"
+            },
+            {
+              "default": "query.vertical_speed >= -2.1 || query.is_on_ground"
+            }
+          ]
+        },
+        "trigger_event": {
+          "transitions": [
+            {
+              "play_sound": "query.is_on_ground"
+            }
+          ]
+        },
+        "play_sound": {
+          "sound_effects": [
+            {
+              "effect": "stomp_attack"
+            }
+          ],
+          "transitions": [
+            {
+              "default": "query.is_alive"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

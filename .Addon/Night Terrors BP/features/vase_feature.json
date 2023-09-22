@@ -1,0 +1,17 @@
+{
+	"format_version": "1.17.40",
+	"minecraft:single_block_feature": {
+		"description": {
+			"identifier": "keyyard:vase_feature"
+		},
+		"places_block": "keyyard:vase",
+		"enforce_placement_rules": true,
+		"enforce_survivability_rules": true,
+		"may_replace": [
+			"minecraft:air"
+		],
+		"may_place_on": [
+			"minecraft:stone"
+		]
+	}
+}

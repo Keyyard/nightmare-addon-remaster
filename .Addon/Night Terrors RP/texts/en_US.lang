@@ -1,4 +1,31 @@
-pack.name=Night Terrors RP
-pack.description=
+pack.name=§aNight Terrors Add-On [Resources]§r Inferno Update (Release 4)
+pack.description=Add-On made by §b@Keyyard§r on Twitter. Stumbled upon an adventure where all of you have observed is in your nightmares!
 
-entity.mob:wraithwood_stalker.name=Wraithwood Stalker
+item.item:demonic_blade=Darkness Blade
+item.item:cursed_spell_paper=Cursed Spell Paper
+item.item:hell_ingot=Inferno Ingot
+item.item:hell_trident=Inferno Trident
+item.item:hatchet=Hatchet
+
+tile.keyyard:vase.name=Vase
+
+item.spawn_egg.entity.entity:ghost.name=Spawn Ghost
+item.spawn_egg.entity.entity:ghost_ball.name=Spawn Ghost Ball
+item.spawn_egg.entity.entity:reaper.name=Spawn Reaper
+item.spawn_egg.entity.entity:ghoul.name=Spawn Ghoul
+item.spawn_egg.entity.entity:royal_ghost.name=§cSpawn Royal Ghost§r
+item.spawn_egg.entity.entity:spirit.name=Spawn Spirit
+item.spawn_egg.entity.entity:flushed_fish.name=Spawn Flushed Fish
+item.spawn_egg.entity.entity:tombstone.name=Spawn Tombstone
+item.spawn_egg.entity.entity:headless_horseman.name=§6Spawn Headless Horseman§r
+
+entity.entity:ghost.name=Ghost
+entity.entity:ghost_ball.name=Ghost Ball
+entity.entity:royal_ghost.name=§cRoyal Ghost§r
+entity.entity:headless_horseman.name=§6Headless Horseman§r
+entity.entity:flushed_fish.name=Flushed Fish
+entity.entity:reaper.name=Reaper
+entity.entity:ghoul.name=Ghoul
+entity.entity:spirit.name=Spirit
+entity.entity:tombstone.name=Tombstone
+entity.entity:thrown_hell_trident.name=Thrown Inferno Trident

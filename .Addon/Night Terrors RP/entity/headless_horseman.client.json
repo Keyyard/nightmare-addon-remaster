@@ -1,0 +1,27 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "entity:headless_horseman",
+            "spawn_egg": {
+                "overlay_color": "#d38922",
+                "base_color": "#3b2007"
+            },
+            "textures": {
+                "default": "textures/entity/horseman_hatchet"
+            },
+            "materials": {
+                "default": "enderman"
+            },
+            "animations": {
+                "move": "controller.animation.entity.headless_horseman.move"
+            },
+            "geometry": {
+                "default": "geometry.headless_horseman"
+            },
+            "render_controllers": [
+                "controller.render.headless_horseman"
+            ]
+        }
+    }
+}

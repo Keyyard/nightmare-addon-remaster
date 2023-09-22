@@ -1,0 +1,32 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.ghoul.new.default": {
+      "geometry": "geometry.default",
+      "part_visibility": [
+        { "right_wing": "variable.ghoul_has_right_wing" },
+        { "left_wing": "variable.ghoul_has_left_wing" }
+      ],
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.default" ]
+    },
+
+    "controller.render.ghoul.new.glow": {
+      "geometry": "geometry.default",
+      "part_visibility": [
+        { "right_wing": "variable.ghoul_has_right_wing" },
+        { "left_wing": "variable.ghoul_has_left_wing" }
+      ],
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "texture.default" ],
+      "overlay_color": {
+        "r": "variable.remaining_life ? math.min(math.max(variable.remaining_life / query.life_span, 0.08), 0.7) : 0.0",
+        "g": "variable.remaining_life ? math.min(math.max(variable.remaining_life / query.life_span, 0.1) + 0.25, 1.0) : 0.0",
+        "b": "variable.remaining_life ? math.min(math.max(variable.remaining_life / query.life_span, 0.08), 0.7) : 0.0",
+        "a": "query.life_span ? 0.45 : 0.0"
+      },
+      "light_color_multiplier": "query.life_span ? 1.2 : 0.9",
+      "ignore_lighting": true
+    }
+  }
+}
