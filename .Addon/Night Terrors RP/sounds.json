@@ -1,14 +1,6 @@
 {
   "entity_sounds": {
     "entities": {
-      "entity:flushed_fish": {
-        "volume": 4.0,
-        "pitch": [ 0.8, 1.2 ],
-        "events": {
-          "ambient": "mob.ghost.sound",
-          "attack": "mob.reaper.attack"
-        }
-      },
       "entity:ghost": {
         "volume": 4.0,
         "pitch": [ 1.0, 1.0 ],

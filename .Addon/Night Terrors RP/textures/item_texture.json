@@ -13,9 +13,6 @@
         },
         "hell_trident": {
             "textures": "textures/items/hell_trident"
-        },
-        "hatchet": {
-            "textures": "textures/items/hatchet"
         }
     }
 }

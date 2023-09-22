@@ -1,5 +1,5 @@
 {
-  "format_version": "1.10.0",
+  "format_version": "1.16.10",
   "minecraft:client_entity": {
     "description": {
       "identifier": "minecraft:player",
@@ -10,13 +10,11 @@
       },
       "textures": {
         "default": "textures/entity/steve",
-        "cape": "textures/entity/cape_invisible",
-        "hatchet": "textures/entity/hatchet"
+        "cape": "textures/entity/cape_invisible"
       },
       "geometry": {
         "default": "geometry.humanoid.custom",
-        "cape": "geometry.cape",
-        "hatchet": "geometry.hatchet"
+        "cape": "geometry.cape"
       },
       "scripts": {
         "scale": "0.9375",
@@ -38,17 +36,9 @@
 
           "variable.map_angle = math.clamp(1 - variable.player_x_rotation / 45.1, 0.0, 1.0);",
           "variable.item_use_normalized = query.main_hand_item_use_duration / query.main_hand_item_max_duration;",
-
-          "variable.hatchet = query.get_equipped_item_name('main_hand') == 'hatchet';"
         ],
         "animate": [
-          "root",
-          {
-            "hatchet_first_person": "variable.hatchet && variable.is_first_person"
-        },
-        {
-            "hatchet": "variable.hatchet"
-        }
+          "root"
         ]
       },
       "animations": {
@@ -106,8 +96,7 @@
       "render_controllers": [
         { "controller.render.player.first_person": "variable.is_first_person" },
         { "controller.render.player.third_person": "!variable.is_first_person && !variable.map_face_icon" },
-        { "controller.render.player.map": "variable.map_face_icon" },
-        {"controller.render.hatchet": "variable.hatchet"}
+        { "controller.render.player.map": "variable.map_face_icon" }
       ],
       "enable_attachables": true
     }

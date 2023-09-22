@@ -1,5 +1,5 @@
 {
-    "format_version": "1.16.100",
+    "format_version": "1.19.30",
     "minecraft:block": {
         "description": {
             "identifier": "keyyard:vase",
@@ -51,10 +51,6 @@
         "components": {
             "minecraft:on_player_destroyed": {
                 "event": "keyyard:loot"
-            },
-            "minecraft:creative_category": {
-                "category": "nature",
-                "group": "itemGroup.name.skull"
             },
             "minecraft:geometry": "geometry.vase",
             "minecraft:material_instances": {

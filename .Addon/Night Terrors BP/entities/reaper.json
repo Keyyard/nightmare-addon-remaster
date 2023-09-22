@@ -150,6 +150,7 @@
             "minecraft:movement": {
                 "value": 1.8
             },
+            "minecraft:navigation.generic": {},
             "minecraft:behavior.open_door": {
                 "priority": 6,
                 "close_door_after": true

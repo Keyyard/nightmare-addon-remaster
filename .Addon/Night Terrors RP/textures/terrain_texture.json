@@ -6,9 +6,6 @@
 	"texture_data": {
 		"keyyard_vase": {
 			"textures": "textures/blocks/vase"
-		},
-		"keyyard_test": {
-			"textures": "textures/blocks/test"
 		}
 	}
 }
