@@ -7,7 +7,7 @@
 				"default": "entity_alphatest"
 			},
 			"textures": {
-				"default": "textures/entity/skelifish"
+				"default": "textures/entity/SkeliFish"
 			},
 			"geometry": {
 				"default": "geometry.skelifish"
