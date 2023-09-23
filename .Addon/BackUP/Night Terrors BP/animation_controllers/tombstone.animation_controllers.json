@@ -1,0 +1,23 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.tombstone.moon": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [{
+                        "trigger_event": "query.moon_brightness == 1"
+                    }]
+                },
+                "trigger_event": {
+                    "on_entry": [
+                        "/tellraw @a {\"rawtext\":[{\"text\":\"§eThe moon seems brighter today...\"}]}"
+                    ],
+                    "transitions": [{
+                        "default": "query.moon_brightness != 1"
+                    }]
+                }
+            }
+        }
+    }
+}

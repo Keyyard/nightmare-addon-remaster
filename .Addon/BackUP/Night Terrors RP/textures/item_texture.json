@@ -1,5 +1,18 @@
 {
-	"resource_pack_name": "Night Terrors",
-	"texture_name": "atlas.items",
-	"texture_data": {}
+    "resource_pack_name": "vanilla",
+    "texture_name": "atlas.items",
+    "texture_data": {
+        "demonic_blade": {
+            "textures": "textures/items/demonic_blade"
+        },
+        "cursed_spell_paper": {
+            "textures": "textures/items/cursed_spell_paper"
+        },
+        "hell_ingot": {
+            "textures": "textures/items/hell_ingot"
+        },
+        "hell_trident": {
+            "textures": "textures/items/hell_trident"
+        }
+    }
 }

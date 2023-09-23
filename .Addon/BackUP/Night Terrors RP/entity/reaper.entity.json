@@ -1,0 +1,47 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "entity:reaper",
+      "textures": {
+        "default": "textures/entity/reaper"
+      },
+      "materials": { 
+        "default": "wither_boss_armor" 
+      },
+      "geometry": {
+        "default": "geometry.reaper"
+      },
+      "scripts": {
+        "scale": "query.life_span ? math.min(variable.remaining_life / 20.0, 0.4) * 2.3 * math.min(query.life_time, 1.0) : 1.0",
+        "pre_animation": [
+          "variable.tcos0 = (math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
+          "variable.remaining_life = query.life_span ? math.max((query.life_span - 1.0) - (query.life_time * 20.0), 0.0) : 0.0;"
+        ],
+        "animate": [
+          { "humanoid_big_head": "query.is_baby" },
+          "move",
+          "look_at_target",
+          "holding",
+          { "swimming": "query.is_swimming" }
+        ]
+      },
+      "animations": {
+        "humanoid_big_head": "animation.humanoid.big_head",
+        "move": "animation.entity.reaper.move",
+        "look_at_target": "controller.animation.humanoid.look_at_target",
+        "look_at_target_default": "animation.humanoid.look_at_target.default",
+        "look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+        "look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+        "holding": "animation.humanoid.holding",
+        "swimming": "animation.zombie.swimming"
+      },
+      "render_controllers": [ "controller.render.reaper" ],
+      "enable_attachables": true,
+      "spawn_egg": {
+        "base_color": "#002200",
+        "overlay_color": "#110011"
+      }
+    }
+  }
+}

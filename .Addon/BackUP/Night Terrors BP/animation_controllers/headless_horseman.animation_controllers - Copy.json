@@ -1,0 +1,31 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.headless_horseman.fire_path": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [{
+                        "trigger_event": "query.is_alive && query.modified_move_speed >= 0.05"
+                    }]
+                },
+                "trigger_event": {
+                    "on_entry": [
+                        "/particle minecraft:basic_flame_particle"
+                    ],
+                    "transitions": [{
+                        "trigger_event2": "1.0"
+                    }]
+                },
+                "trigger_event2": {
+                    "on_entry": [
+                        "/particle minecraft:basic_flame_particle"
+                    ],
+                    "transitions": [{
+                        "default": "1.0"
+                    }]
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,68 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.royal_ghost.death_trigger": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "trigger_event": "!query.is_alive && !query.out_of_control"
+            }
+          ]
+        },
+        "trigger_event": {
+          "on_entry": [
+            "@s begin_death"
+          ]
+        }
+      }
+    },
+
+    "controller.animation.royal_ghost.stomp_damage": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "on_air": "!query.is_on_ground && query.vertical_speed > 0.0"
+            }
+          ]
+        },
+        "on_air": {
+          "on_entry": [
+            "variable.initial_y_position = query.position(1);"
+          ],
+          "transitions": [
+            {
+              "on_fall": "query.vertical_speed <= 0.0"
+            }
+          ]
+        },
+        "on_fall": {
+          "on_entry": [
+            "variable.fall_y_position = query.position(1);"
+          ],
+          "transitions": [
+            {
+              "trigger_event": "query.vertical_speed < -2.1 && (variable.fall_y_position - variable.initial_y_position) > 5.0"
+            },
+            {
+              "default": "query.vertical_speed >= -2.1 || query.is_on_ground"
+            }
+          ]
+        },
+        "trigger_event": {
+          "on_exit": [
+            "@s do_stomp_damage"
+          ],
+          "transitions": [
+            {
+              "default": "query.is_on_ground"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

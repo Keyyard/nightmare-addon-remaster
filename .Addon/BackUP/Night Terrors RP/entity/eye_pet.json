@@ -7,7 +7,7 @@
 				"default": "entity_alphatest"
 			},
 			"textures": {
-				"default": "textures/entity/eyepet"
+				"default": "textures/entity/EyePet"
 			},
 			"geometry": {
 				"default": "geometry.eye_pet"
