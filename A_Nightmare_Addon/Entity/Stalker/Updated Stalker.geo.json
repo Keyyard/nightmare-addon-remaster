@@ -129,6 +129,34 @@
 						{"origin": [11, 56, 2], "size": [3, 14, 3], "pivot": [13.5, 58, 0.5], "rotation": [0, 0, 45], "uv": [48, 75]},
 						{"origin": [14, 55, 2], "size": [3, 13, 3], "pivot": [13.5, 58, 0.5], "rotation": [0, 0, 45], "uv": [76, 22]}
 					]
+				},
+				{
+					"name": "bone",
+					"pivot": [0, 0, 0],
+					"locators": {
+						"locator": [0, 0, 0]
+					}
+				},
+				{
+					"name": "bone2",
+					"pivot": [0, 0, 0],
+					"locators": {
+						"locator2": [0, 0, 0]
+					}
+				},
+				{
+					"name": "bone3",
+					"pivot": [0, 0, 0],
+					"locators": {
+						"locator3": [0, 0, 0]
+					}
+				},
+				{
+					"name": "bone4",
+					"pivot": [0, 0, 0],
+					"locators": {
+						"locator4": [0, 0, 0]
+					}
 				}
 			]
 		}
