@@ -36,6 +36,26 @@
 						}
 					}
 				},
+				"HeadSaw": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.25": {
+							"post": [0, 0, 90],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [0, 0, 180],
+							"lerp_mode": "catmullrom"
+						},
+						"0.75": {
+							"post": [0, 0, 270],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
 				"LeftLeg": {
 					"rotation": {
 						"0.0": {
@@ -116,6 +136,22 @@
 						},
 						"0.75": {
 							"post": [-30, -6.65, 3.48],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"Crystal": {
+					"position": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.375": {
+							"post": [1, 1, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.75": {
+							"post": [0, 0, 0],
 							"lerp_mode": "catmullrom"
 						}
 					}
