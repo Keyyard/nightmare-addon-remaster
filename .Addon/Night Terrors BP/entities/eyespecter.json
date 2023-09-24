@@ -2,7 +2,7 @@
   "format_version": "1.16.0",
   "minecraft:entity": {
     "description": {
-      "identifier": "mob:eyespecter",
+      "identifier": "entity:eyespecter",
       "is_spawnable": true,
       "is_summonable": true,
       "is_experimental": false
@@ -10,7 +10,7 @@
     "component_groups": {
       "calm": {
         "minecraft:on_target_acquired": {
-          "event": "mob:become_angry",
+          "event": "entity:become_angry",
           "target": "self"
         },
         "minecraft:movement": {
@@ -21,21 +21,7 @@
         }
       },
       "pull": {
-        "minecraft:behavior.knockback_roar": {
-          "priority": 0,
-          "duration": 1,
-          "attack_time": 1,
-          "knockback_damage": 0,
-          "knockback_strength": -2,
-          "knockback_range": 8,
-          "knockback_filters": {
-            "test": "is_family",
-            "subject": "other",
-            "operator": "==",
-            "value": "player"
-          },
-          "cooldown_time": 5
-        }
+        "behavior"
       },
       "angry1": {
         "minecraft:entity_sensor": {
@@ -44,7 +30,7 @@
           "require_all": true,
           "event_filters": {
             "none_of": [
-              { "test": "is_family", "subject": "other", "value": "mob" },
+              { "test": "is_family", "subject": "other", "value": "entity" },
               {
                 "all_of": [
                   {
@@ -71,7 +57,7 @@
         "minecraft:angry": {
           "duration": 25,
           "calm_event": {
-            "event": "mob:become_calm",
+            "event": "entity:become_calm",
             "target": "self"
           }
         },
@@ -99,13 +85,14 @@
           }
         },
         "minecraft:scale": {
-          "value": 2.25
+          "value": 1.5
         },
         "minecraft:movement": {
           "value": 0.45
         },
         "minecraft:behavior.melee_attack": {
-          "priority": 2
+          "priority": 2,
+          "set_persistent": true
         }
       },
       "angry2": {
@@ -134,7 +121,7 @@
         "on_death": "query.last_hit_by_player ? 5 : 0"
       },
       "minecraft:type_family": {
-        "family": ["eyespecter", "monster", "mob"]
+        "family": ["eyespecter", "monster", "entity"]
       },
       "minecraft:breathable": {
         "total_supply": 15,
@@ -186,7 +173,7 @@
         "set_target": true,
         "look_cooldown": 16.0,
         "look_event": {
-          "event": "mob:become_angry",
+          "event": "entity:become_angry",
           "target": "self"
         },
         "filters": {
@@ -270,7 +257,7 @@
           "component_groups": ["calm"]
         }
       },
-      "mob:become_angry": {
+      "entity:become_angry": {
         "remove": {
           "component_groups": ["calm"]
         },
@@ -278,7 +265,7 @@
           "component_groups": ["angry1"]
         }
       },
-      "mob:become_calm": {
+      "entity:become_calm": {
         "remove": {
           "component_groups": ["angry1", "angry2"]
         },

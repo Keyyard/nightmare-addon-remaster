@@ -2,15 +2,15 @@
 	"format_version": "1.10.0",
 	"minecraft:client_entity": {
 		"description": {
-			"identifier": "entity:eye_pet",
+			"identifier": "entity:eyespecter",
 			"materials": {
 				"default": "entity_alphatest"
 			},
 			"textures": {
-				"default": "textures/entity/EyePet"
+				"default": "textures/entity/eyespecter"
 			},
 			"geometry": {
-				"default": "geometry.eye_pet"
+				"default": "geometry.eyespecter"
 			},
 			"scripts": {
 				"pre_animation": [
@@ -56,8 +56,8 @@
 				"controller.render.default"
 			],
 			"spawn_egg": {
-				"base_color": "#000000",
-				"overlay_color": "#FFFFFF"
+				"base_color": "#232323",
+				"overlay_color": "#1c0202"
 			}
 		}
 	}

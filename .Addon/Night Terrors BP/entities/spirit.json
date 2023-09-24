@@ -49,7 +49,7 @@
         "family": [
           "spirit",
           "ghost",
-          "mob"
+          "entity"
         ]
       },
       "minecraft:collision_box": {

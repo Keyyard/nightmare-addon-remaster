@@ -2,7 +2,7 @@
 	"format_version": "1.16.0",
 	"minecraft:entity": {
 		"description": {
-			"identifier": "mob:zomboni",
+			"identifier": "entity:zomboni",
 			"is_spawnable": true,
 			"is_summonable": true,
 			"is_experimental": false
@@ -11,7 +11,7 @@
 		"components": {
 			"minecraft:type_family": {
 				"family": [
-					"mob", "monster", "zomboni"
+					"entity", "monster", "zomboni"
 				]
 			},
 			"minecraft:health":{
@@ -65,7 +65,8 @@
 				"damage":5
 			},
 			"minecraft:behavior.melee_attack":{
-				"priority":3
+				"priority":2,
+				"speed_multiplier": 1.2
 			},
 			"minecraft:physics": {},
 			"minecraft:pushable": {

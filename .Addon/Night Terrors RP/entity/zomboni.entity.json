@@ -2,16 +2,19 @@
 	"format_version": "1.10.0",
 	"minecraft:client_entity": {
 		"description": {
-			"identifier": "entity:eye_pet",
+			"identifier": "entity:zomboni",
 			"materials": {
 				"default": "entity_alphatest"
 			},
 			"textures": {
-				"default": "textures/entity/EyePet"
+				"default": "textures/entity/zomboni"
 			},
 			"geometry": {
-				"default": "geometry.eye_pet"
+				"default": "geometry.zomboni"
 			},
+			"render_controllers": [
+				"controller.render.default"
+			],
 			"scripts": {
 				"pre_animation": [
 				  "variable.tcos0 = (math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;"
@@ -52,12 +55,9 @@
 				"attack_rotations": "animation.drowned.attack.rotations",
 				"swimming": "animation.zombie.swimming"
 			  },
-			"render_controllers": [
-				"controller.render.default"
-			],
 			"spawn_egg": {
-				"base_color": "#000000",
-				"overlay_color": "#FFFFFF"
+				"base_color": "#ffcf75",
+				"overlay_color": "#ff7b00"
 			}
 		}
 	}

@@ -133,7 +133,7 @@
         "events": {
             "minecraft:entity_spawned": {
                 "run_command": {
-                    "command": ["time set midnight", "weather thunder", "summon lightning_bolt"]
+                    "command": ["time set midnight", "weather thunder", "summon lightning_bolt ~~~-3"]
                 }
             }
         }

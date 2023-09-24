@@ -115,7 +115,7 @@
                 "family": [
                     "reaper",
                     "ghost",
-                    "mob"
+                    "entity"
                 ]
             },
             "minecraft:loot": {

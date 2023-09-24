@@ -69,9 +69,9 @@
         "swimming": "animation.zombie.swimming"
       },
       "sound_effects": {
-        "spawn": "mob.wither.spawn",
-        "death": "mob.wither.death",
-        "stomp_attack": "mob.royal_ghost.stomp_attack"
+        "spawn": "entity.wither.spawn",
+        "death": "entity.wither.death",
+        "stomp_attack": "entity.royal_ghost.stomp_attack"
       },
       "render_controllers": [ "controller.render.default" ],
       "enable_attachables": true,

@@ -65,7 +65,7 @@
                         },
                         "event": "summon_headless_horseman"
                     },
-                    "play_sounds": "mob.ghast.scream",
+                    "play_sounds": "entity.ghast.scream",
                     "interact_text": "§6Spawn Headless Horseman§r"
                 }
             },

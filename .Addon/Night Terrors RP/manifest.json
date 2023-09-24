@@ -3,18 +3,7 @@
 	"metadata": {
 		"authors": [
 			"Keyyard & Beyond64"
-		],
-		"generated_with": {
-			"mob": [
-				"2.6.0"
-			],
-			"dash": [
-				"0.10.8"
-			],
-			"bridge": [
-				"2.6.0"
-			]
-		}
+		]
 	},
 	"header": {
 		"name": "pack.name",
