@@ -1,0 +1,33 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "entity:wraithwood_stalker",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/wraithwood_stalker"
+      },
+      "geometry": {
+        "default": "geometry.wraithwood_stalker"
+      },
+      "scripts": {
+        "animate": [
+          "controller"
+        ]
+      },
+      "animations": {
+        "controller": "controller.animation.wraithwood_stalker",
+        "walk": "animation.wraithwood_stalker.walk",
+        "attack": "animation.wraithwood_stalker.attack",
+        "idle": "animation.wraithwood_stalker.idle"
+      },
+      "render_controllers": ["controller.render.default"],
+      "spawn_egg": {
+        "base_color": "#342310",
+        "overlay_color": "#242222"
+      }
+    }
+  }
+}

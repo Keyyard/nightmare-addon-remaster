@@ -1,0 +1,156 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "entity:wraithwood_stalker",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "near": {
+        "minecraft:scale": {
+          "value": 1
+        },
+        "minecraft:entity_sensor": {
+          "sensor_range": 8,
+          "relative_range": false,
+          "require_all": true,
+          "event_filters": {
+            "test": "distance_to_nearest_player",
+            "operator": ">",
+            "value": 10
+          },
+          "event": "far"
+        }
+      },
+      "far": {
+        "minecraft:scale": {
+          "value": 0.225
+        },
+        "minecraft:entity_sensor": {
+          "sensor_range": 8,
+          "relative_range": false,
+          "require_all": true,
+          "event_filters": {
+            "none_of": [
+              { "test": "is_family", "subject": "other", "value": "mob" },
+              {
+                "all_of": [
+                  { "test": "is_family", "subject": "other", "value": "player" }
+                ]
+              }
+            ],
+            "test": "distance_to_nearest_player",
+            "operator": "<",
+            "value": 5
+          },
+          "event": "near"
+        }
+      }
+    },
+    "components": {
+      "minecraft:experience_reward": {
+        "on_death": "query.is_powered ? 0.0 : (query.last_hit_by_player ? math.random(6.0, 8.0) : 0.0)"
+      },
+      "minecraft:type_family": {
+        "family": ["wraithwood_stalker", "monster", "mob"]
+      },
+      "minecraft:health": {
+        "value": 16,
+        "max": 16
+      },
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 1.8
+      },
+      "minecraft:movement": {
+        "value": 0.4
+      },
+      "minecraft:behavior.open_door": {
+        "priority": 6,
+        "close_door_after": true
+      },
+      "minecraft:annotation.open_door": {},
+      "minecraft:navigation.climb": {
+        "can_pass_doors": true,
+        "can_open_doors": true,
+        "can_open_iron_doors": true,
+        "can_path_over_water": true,
+        "can_path_from_air": true,
+        "avoid_sun": true
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:fire_immune": {},
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": { "test": "is_family", "subject": "other", "value": "player" },
+            "max_dist": 32
+          }
+        ],
+        "must_see": true
+      },
+      "minecraft:behavior.melee_attack": {
+        "priority": 2,
+        "speed_multiplier": 1.25,
+        "track_target": true
+      },
+      "minecraft:attack": {
+        "damage": 8,
+        "effect_name": "wither",
+        "effect_duration": 1
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 5,
+        "speed_multiplier": 1
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 0,
+        "look_distance": 16
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 6
+      },
+      "minecraft:follow_range": {
+        "value": 64,
+        "max": 64
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": ["near"]
+        }
+      },
+      "far": {
+        "add": {
+          "component_groups": ["far"]
+        },
+        "remove": {
+          "component_groups": ["near"]
+        }
+      },
+      "near": {
+        "add": {
+          "component_groups": ["near"]
+        },
+        "remove": {
+          "component_groups": ["far"]
+        }
+      }
+    }
+  }
+}

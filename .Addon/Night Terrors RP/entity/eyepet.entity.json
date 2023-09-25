@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "entity:eyepet",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/eyepet"
+			},
+			"geometry": {
+				"default": "geometry.eyepet"
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#c02929",
+				"overlay_color": "#759af2"
+			}
+		}
+	}
+}

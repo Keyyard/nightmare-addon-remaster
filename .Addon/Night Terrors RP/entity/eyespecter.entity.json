@@ -1,0 +1,35 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "entity:eyespecter",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/eyespecter"
+			},
+			"geometry": {
+				"default": "geometry.eyespecter"
+			},
+			"scripts": {
+				"animate": [
+				  "controller"
+				]
+			  },
+			  "animations": {
+				"controller": "controller.animation.wraithwood_stalker",
+				"walk": "animation.eyespecter.walk",
+				"attack": "animation.eyespecter.attack",
+				"idle": "animation.eyespecter.idle"
+			  },
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"spawn_egg": {
+				"base_color": "#232323",
+				"overlay_color": "#1c0202"
+			}
+		}
+	}
+}

@@ -1,0 +1,103 @@
+{
+    "format_version": "1.16.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "entity:tombstone",
+            "is_spawnable": true,
+            "is_summonable": true,
+            "is_experimental": false,
+            "animations": {
+                "moon": "controller.animation.tombstone.moon"
+            },
+            "scripts": {
+                "animate": [{
+                    "moon": "query.moon_phase == 0"
+                }]
+            }
+        },
+        "component_groups": {
+            "summoned": {
+                "minecraft:is_shaking": {},
+                "minecraft:spawn_entity": {
+                    "entities": {
+                        "min_wait_time": 0.19,
+                        "max_wait_time": 0.35,
+                        "spawn_sound": "step",
+                        "spawn_entity": "minecraft:xp_orb"
+                    }
+                },
+                "minecraft:transformation": {
+                    "into": "entity:headless_horseman<minecraft:entity_spawned>",
+                    "delay": 3.5
+                }
+            }
+        },
+        "components": {
+            "minecraft:health": {
+                "value": 1,
+                "max": 1
+            },
+            "minecraft:type_family": {
+                "family": [
+                    "tombstone",
+                    "inanimate"
+                ]
+            },
+            "minecraft:scale": {
+                "value": 1.2
+            },
+            "minecraft:interact": {
+                "interactions": {
+                    "on_interact": {
+                        "filters": {
+                            "all_of": [{
+                                    "test": "is_family",
+                                    "subject": "other",
+                                    "operator": "==",
+                                    "value": "player"
+                                },
+                                {
+                                    "test": "moon_phase",
+                                    "operator": "==",
+                                    "value": 0
+                                }
+                            ]
+                        },
+                        "event": "summon_headless_horseman"
+                    },
+                    "play_sounds": "entity.ghast.scream",
+                    "interact_text": "§6Spawn Headless Horseman§r"
+                }
+            },
+            "minecraft:knockback_resistance": {
+                "value": 100.0
+            },
+            "minecraft:collision_box": {
+                "width": 0.001,
+                "height": 0.001
+            },
+            "minecraft:custom_hit_test": {
+                "hitboxes": [{
+                    "width": 1.0,
+                    "height": 1.2,
+                    "pivot": [0.0, 0.0, 0.0]
+                }]
+            },
+            "minecraft:conditional_bandwidth_optimization": {},
+            "minecraft:physics": {},
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": true
+            }
+        },
+        "events": {
+            "summon_headless_horseman": {
+                "add": {
+                    "component_groups": [
+                        "summoned"
+                    ]
+                }
+            }
+        }
+    }
+}

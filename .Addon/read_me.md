@@ -49,7 +49,7 @@
   Attack Type: Ranged (Eye Beam)  
   Attack Damage: Moderate  
   Health: Low  
-  Ability: Eye Beam - Shoots a damaging laser beam at the player.  
+  Ability: 
   Drops: Spectral Eye Lens
 
 # Ghost

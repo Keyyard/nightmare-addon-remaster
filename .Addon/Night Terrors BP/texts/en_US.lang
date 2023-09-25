@@ -1,2 +1,4 @@
 pack.name=§aNight Terrors Add-On [Behaviors]§r v0.0.8
 pack.description=Add-On made by §b@keyyard§r & §b@Zarkmend_Zan§r on Twitter. Stumbled upon an adventure where all of you have observed is in your nightmares!
+entity.entity:eyepet.name=Eye Pet
+item.spawn_egg.entity.entity:eyepet.name=Spawn Eye Pet
