@@ -110,7 +110,6 @@
             "minecraft:experience_reward": {
                 "on_death": "query.is_powered ? 0.0 : (query.last_hit_by_player ? math.random(5.0, 6.0) : 0.0)"
             },
-            "minecraft:movement.generic": {},
             "minecraft:type_family": {
                 "family": [
                     "reaper",

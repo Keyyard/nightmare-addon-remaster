@@ -1,0 +1,145 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "entity:eyepet",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "tamed": {
+        "minecraft:type_family": {
+          "family": ["eyepet", "mob"]
+        },
+        "minecraft:is_tamed": {},
+        "minecraft:behavior.follow_owner": {
+          "priority": 2,
+          "speed_multiplier": 1,
+          "start_distance": 5,
+          "stop_distance": 1
+        },
+		"minecraft:behavior.owner_hurt_target": {},
+		"minecraft:behavior.owner_hurt_by_target": {},
+        "minecraft:behavior.find_mount": {
+          "priority": 3,
+          "within_radius": 16,
+          "avoid_water": true,
+          "start_delay": 100,
+          "target_needed": false,
+          "mount_distance": 2
+        }
+      }
+    },
+    "components": {
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
+      },
+	  "minecraft:behavior.charge_attack": {
+		"max_distance": 7,
+		"min_distance": 0,
+		"priority": 0,
+		"speed_multiplier": 1.5,
+		"success_rate": 1
+	},
+	"minecraft:behavior.hurt_by_target": {
+		"alert_same_type": false,
+		"hurt_owner": false
+	},
+	  "minecraft:interact": {
+		"interactions": [
+			{
+				"interact_text": "Tame",
+				"on_interact":"tame",
+				"particle_on_start": {
+					"effect": "minecraft:heart_particle",
+					"offset": [0, 1, 0]
+				},
+				"play_sounds": "cast.spell"
+
+			}
+		]
+	  },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0
+      },
+      "minecraft:collision_box": {
+        "width": 0.9,
+        "height": 0.9
+      },
+      "minecraft:nameable": {},
+      "minecraft:health": {
+        "value": 6,
+        "max": 6
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:movement": {
+        "value": 0.4
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "fall",
+          "deals_damage": false
+        }
+      },
+      "minecraft:jump.static": {},
+      "minecraft:can_fly": {},
+      "minecraft:navigation.fly": {
+        "can_path_over_water": true,
+        "can_path_from_air": true
+      },
+      "minecraft:movement.fly": {},
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.panic": {
+        "priority": 0,
+        "speed_multiplier": 1.25
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 1,
+        "look_distance": 8
+      },
+      "minecraft:conditional_bandwidth_optimization": {},
+      "minecraft:leashable": {
+        "soft_distance": 4,
+        "hard_distance": 6,
+        "max_distance": 10
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/eyepet.json"
+      }
+    },
+    "events": {
+		"minecraft:entity_spawned": {
+		},
+      "tame": {
+        "add": {
+          "component_groups": ["tamed"]
+        }
+      }
+    }
+  }
+}

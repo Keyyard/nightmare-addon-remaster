@@ -21,7 +21,6 @@
         }
       },
       "pull": {
-        "behavior"
       },
       "angry1": {
         "minecraft:entity_sensor": {

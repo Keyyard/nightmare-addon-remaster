@@ -2,20 +2,20 @@
 	"format_version": "1.10.0",
 	"minecraft:client_entity": {
 		"description": {
-			"identifier": "entity:skelifish",
+			"identifier": "entity:axequaker",
 			"materials": {
 				"default": "entity_alphatest"
 			},
 			"textures": {
-				"default": "textures/entity/skelifish"
+				"default": "textures/entity/axequaker"
 			},
 			"geometry": {
-				"default": "geometry.skelifish"
+				"default": "geometry.axequaker"
 			},
 			"render_controllers": ["controller.render.default"],
 			"spawn_egg": {
-				"base_color": "#c5c596",
-				"overlay_color": "#777777"
+				"base_color": "#8e3f82",
+				"overlay_color": "#c8b5b5"
 			}
 		}
 	}

@@ -1,55 +1,32 @@
 {
 	"format_version": 2,
 	"metadata": {
-		"authors": [
-			"Keyyard & Beyond64"
-		],
+		"authors": ["Keyyard & Beyond64"],
 		"generated_with": {
-			"entity": [
-				"2.6.0"
-			],
-			"dash": [
-				"0.10.8"
-			],
-			"bridge": [
-				"2.6.0"
-			]
+			"entity": ["2.6.0"],
+			"dash": ["0.10.8"],
+			"bridge": ["2.6.0"],
+			"blockbench_entity_wizard": ["1.3.0"]
 		}
 	},
 	"header": {
 		"name": "pack.name",
 		"description": "pack.description",
-		"min_engine_version": [
-			1,
-			19,
-			50
-		],
+		"min_engine_version": [1, 19, 50],
 		"uuid": "04305101-e10f-43bd-a5e9-4f30a8f0a9f6",
-		"version": [
-			1,
-			0,
-			0
-		]
+		"version": [1, 0, 0]
 	},
 	"modules": [
 		{
 			"type": "data",
 			"uuid": "ef67a8ed-11be-4192-a59e-166a701affcf",
-			"version": [
-				1,
-				0,
-				0
-			]
+			"version": [1, 0, 0]
 		}
 	],
 	"dependencies": [
 		{
 			"uuid": "804c0c8a-5f29-4609-8f5d-cee68530902d",
-			"version": [
-				1,
-				0,
-				0
-			]
+			"version": [1, 0, 0]
 		}
 	]
 }
