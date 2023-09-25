@@ -11,7 +11,7 @@
 		"components": {
 			"minecraft:type_family": {
 				"family": [
-					"entity", "monster", "zomboni"
+					"mob", "monster", "zomboni"
 				]
 			},
 			"minecraft:health":{

@@ -94,13 +94,13 @@
 					]
 				},
 				{
-					"name": "rightArm1",
+					"name": "rightArm",
 					"parent": "body",
 					"pivot": [12, 56, 0]
 				},
 				{
 					"name": "Weapon",
-					"parent": "rightArm1",
+					"parent": "rightArm",
 					"pivot": [0, 0, 0],
 					"cubes": [
 						{"origin": [14.6, -1, -21], "size": [1, 8, 8], "uv": [88, 90]},
@@ -115,7 +115,7 @@
 				},
 				{
 					"name": "ArmCrystal",
-					"parent": "rightArm1",
+					"parent": "rightArm",
 					"pivot": [15.15346, 56.56221, 2],
 					"cubes": [
 						{"origin": [12, 7, -1], "size": [6, 51, 6], "uv": [0, 75]},
@@ -125,7 +125,7 @@
 					]
 				},
 				{
-					"name": "leftArm1",
+					"name": "leftArm",
 					"parent": "body",
 					"pivot": [-13.15346, 57.56221, 2],
 					"cubes": [

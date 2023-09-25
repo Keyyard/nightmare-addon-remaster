@@ -254,7 +254,7 @@
         "height": 1.8
       },
       "minecraft:type_family": {
-        "family": [ "ghost", "entity" ]
+        "family": [ "ghost", "mob" ]
       },
       "minecraft:burns_in_daylight": {
       },

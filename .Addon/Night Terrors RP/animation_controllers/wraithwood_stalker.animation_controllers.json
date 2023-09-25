@@ -1,0 +1,36 @@
+{
+	"format_version": "1.19.0",
+	"animation_controllers": {
+		"controller.animation.wraithwood_stalker": {
+			"initial_state": "idle",
+			"states": {
+				"idle": {
+					"animations": ["idle"],
+					"transitions": [
+						{"walking": "q.ground_speed > 1.0"},
+						{"attacking": "v.attack_time"}
+					],
+					"blend_transition": 0.2,
+					"blend_via_shortest_path": true
+				},
+				"walking": {
+					"animations": ["walk"],
+					"transitions": [
+						{"idle": "q.ground_speed < 0.5"},
+						{"attacking": "v.attack_time"}
+					],
+					"blend_transition": 0.2,
+					"blend_via_shortest_path": true
+				},
+				"attacking": {
+					"animations": ["attack"],
+					"transitions": [
+						{"idle": "q.all_animations_finished"}
+					],
+					"blend_transition": 0.2,
+					"blend_via_shortest_path": true
+				}
+			}
+		}
+	}
+}
