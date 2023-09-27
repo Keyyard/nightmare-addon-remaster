@@ -96,7 +96,7 @@
       },
       "minecraft:nameable": {},
       "minecraft:loot": {
-        "table": "loot_tables/entities/enderman.json"
+        "table": "loot_tables/entities/eyespecter.json"
       },
       "minecraft:health": {
         "value": 40,

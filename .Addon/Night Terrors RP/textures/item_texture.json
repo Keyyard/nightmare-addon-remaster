@@ -4,6 +4,15 @@
     "texture_data": {
         "cursed_spell_paper": {
             "textures": "textures/items/cursed_spell_paper"
+        },
+        "shadow_essense": {
+            "textures": "textures/item/shadow_essense"
+        },
+        "soul_shard": {
+            "textures": "textures/item/soul_shard"
+        },
+        "wraithwood_heart": {
+            "textures": "textures/item/wraithwood_heart"
         }
     }
 }

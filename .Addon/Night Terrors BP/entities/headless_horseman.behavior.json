@@ -124,6 +124,9 @@
             },
             "minecraft:conditional_bandwidth_optimization": {},
             "minecraft:physics": {},
+            "minecraft:fall_damage": {
+                "value": 0
+            },
             "minecraft:pushable": {}
         },
 

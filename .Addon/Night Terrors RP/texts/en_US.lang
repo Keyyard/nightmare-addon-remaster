@@ -1,2 +1,3 @@
 entity.entity:eyepet.name=Eye Pet
 item.spawn_egg.entity.entity:eyepet.name=Spawn Eye Pet
+tile.block:tombstone.name=tombstone

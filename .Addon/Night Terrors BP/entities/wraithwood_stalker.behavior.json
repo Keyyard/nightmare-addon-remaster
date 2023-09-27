@@ -100,6 +100,9 @@
         "speed_multiplier": 1.25,
         "track_target": true
       },
+      "minecraft:loot": {
+        "table": "loot_tables/entity/wraithwood_stalker.json"
+      },
       "minecraft:attack": {
         "damage": 8,
         "effect_name": "wither",

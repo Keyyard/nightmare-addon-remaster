@@ -2,6 +2,7 @@
 	"pools": [
 		{
 			"rolls": 1,
+			"type": "loot_table",
 			"entries": [
 				{
 					"type": "item",

@@ -1,0 +1,15 @@
+{
+    "pools": [
+        {
+            "type": "loot_table",
+            "rolls": 1,
+            "entries": [
+                {
+                    "name": "item:shadow_essense",
+                    "count": 1,
+                    "type": "item"
+                }
+            ]
+        }
+    ]
+}

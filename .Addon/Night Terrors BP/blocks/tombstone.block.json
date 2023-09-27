@@ -1,0 +1,108 @@
+{
+  "format_version": "1.20.30",
+  "minecraft:block": {
+    "description": {
+      "identifier": "block:tombstone",
+      "menu_category": {
+        "category": "nature",
+        "group": "itemGroup.name.stone"
+      },
+      "traits": {
+        "minecraft:placement_direction": {
+          "enabled_states": ["minecraft:facing_direction"]
+        }
+      }
+    },
+    "events": {
+      "tombstone:step_on_sound": {
+        "play_sound": {
+          "sound": "step.stone",
+          "target": "self"
+        }
+      },
+      "tombstone:interact": {
+        "sequence": [
+          {
+            "condition": "q.moon_brightness=0",
+            "run_command": {
+              "command": "tellraw @a {\"rawtext\":[{\"text\":\"§eCome back when the moon is brightest\"}]}"
+            }
+          },
+          {
+            "condition": "q.moon_brightness=1",
+            "sequence": [
+              {
+                "play_sound": {
+                  "sound": "beacon.power",
+                  "target": "self"
+                },
+                "run_command": {
+                  "command": [
+                    "summon lightning_bolt ~ ~ ~",
+                    "summon xp_orb ~~~",
+                    "summon xp_orb ~~~",
+                    "summon xp_orb ~~~",
+                    "summon xp_orb ~~~",
+                    "summon entity:headless_horseman ~~15~"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "components": {
+      "minecraft:collision_box": true,
+      "minecraft:selection_box": true,
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 0.4
+      },
+      "minecraft:on_step_on": {
+        "event": "tombstone:step_on_sound"
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 30
+      },
+      "minecraft:geometry": "geometry.tombstone",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "tombstone",
+          "render_method": "alpha_test"
+        }
+      },
+      "minecraft:map_color": "#a4a4a4",
+      "minecraft:on_interact": {
+        "event": "tombstone:interact",
+        "target": "self"
+      },
+      "minecraft:display_name": "Tombstone"
+    },
+    "permutations": [
+      {
+        "condition": "q.block_state('minecraft:facing_direction') == 'up' || q.block_state('minecraft:facing_direction') == 'down' ",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [0, 0, 0]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:facing_direction') == 'east' || q.block_state('minecraft:facing_direction') == 'west' ",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [0, 0, 90]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:facing_direction') == 'north' || q.block_state('minecraft:facing_direction') == 'south' ",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [90, 0, 0]
+          }
+        }
+      }
+    ]
+  }
+}

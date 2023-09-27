@@ -1,0 +1,20 @@
+{
+    "pools": [
+        {
+            "type": "loot_table",
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "item:soul_shard",
+                    "count": 1,
+                    "weight": 90
+                },
+                {
+                    "type": "item",
+                    "name": "item:wraithwood_heart",
+                    "weight": 10
+                }
+            ]
+        }
+    ]
+}
