@@ -4,20 +4,6 @@
 			"rolls": 1,
 			"type": "loot_table",
 			"entries": [
-				{
-					"type": "item",
-					"name": "glass_bottle",
-					"weight": 1,
-					"functions": [
-						{
-							"function": "set_count",
-							"count": {
-								"min": 0,
-								"max": 1
-							}
-						}
-					]
-				}
 			]
 		}
 	]

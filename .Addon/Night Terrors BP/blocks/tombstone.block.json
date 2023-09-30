@@ -1,15 +1,10 @@
 {
-  "format_version": "1.20.30",
+  "format_version": "1.20.10",
   "minecraft:block": {
     "description": {
       "identifier": "block:tombstone",
       "menu_category": {
         "category": "nature"
-      },
-      "traits": {
-        "minecraft:placement_direction": {
-          "enabled_states": ["minecraft:facing_direction"]
-        }
       }
     },
     "events": {
@@ -76,32 +71,6 @@
         "target": "self"
       },
       "minecraft:display_name": "Tombstone"
-    },
-    "permutations": [
-      {
-        "condition": "q.block_state('minecraft:facing_direction') == 'up' || q.block_state('minecraft:facing_direction') == 'down' ",
-        "components": {
-          "minecraft:transformation": {
-            "rotation": [0, 0, 0]
-          }
-        }
-      },
-      {
-        "condition": "q.block_state('minecraft:facing_direction') == 'east' || q.block_state('minecraft:facing_direction') == 'west' ",
-        "components": {
-          "minecraft:transformation": {
-            "rotation": [0, 0, 90]
-          }
-        }
-      },
-      {
-        "condition": "q.block_state('minecraft:facing_direction') == 'north' || q.block_state('minecraft:facing_direction') == 'south' ",
-        "components": {
-          "minecraft:transformation": {
-            "rotation": [90, 0, 0]
-          }
-        }
-      }
-    ]
+    }
   }
 }

@@ -1,0 +1,28 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:attachable": {
+	  "description": {
+		"identifier": "item:wraithwood_cloak.player",
+		"item": {
+		  "item:wraithwood_cloak": "query.owner_identifier == 'minecraft:player'"
+		},
+		"materials": {
+		  "default": "armor",
+		  "enchanted": "armor_enchanted"
+		},
+		"textures": {
+		  "default": "textures/entity/attachables/wraithwood_cloak",
+		  "enchanted": "textures/misc/enchanted_item_glint"
+		},
+		"geometry": {
+		  "default": "geometry.wraithwood_cloak"
+		},
+		"scripts": {
+		  "parent_setup": "variable.chestplate_layer_visible = 0.0;"
+		},
+		"render_controllers": [
+		  "controller.render.armor"
+		]
+	  }
+	}
+  }

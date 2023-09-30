@@ -76,6 +76,24 @@
             "minecraft:behavior.hurt_by_target": {
                 "priority": 1
             },
+            "minecraft:behavior.summon_entity": {
+                "priority": 1,
+                "summon_choices": [
+                  {
+                    "cast_duration": 1,
+                    "sequence": [
+                        {
+                            "shape": "circle"
+                        }
+                    ],
+                    "min_activation_range": 0.0,
+                    "max_activation_range": 45.0,
+                    "cooldown_time": 1.0,
+                    "weight": 1,
+                    "particle_color": "#f0660ab0"
+                  }
+                ]
+              },
             "minecraft:behavior.nearest_attackable_target": {
                 "priority": 1,
                 "within_radius": 256,
