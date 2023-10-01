@@ -1,3 +1,9 @@
+---
+title: "Nightmare Addon Documentation Page"
+permalink: /
+layout: default
+---
+
 # MOBS LIST
 
 - [Axequaker](#axequaker)
