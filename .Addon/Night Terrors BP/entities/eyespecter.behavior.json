@@ -58,8 +58,7 @@
           "value": 0.45
         },
         "minecraft:behavior.melee_attack": {
-          "priority": 2,
-          "set_persistent": true
+          "priority": 2
         }
       },
       "angry2": {
