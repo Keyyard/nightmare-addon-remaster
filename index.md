@@ -1,5 +1,6 @@
 ---
 title: "Nightmare Addon Documentation Page"
+description: Documentation and Planning.
 permalink: /
 layout: default
 ---
