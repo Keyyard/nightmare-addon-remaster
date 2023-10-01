@@ -3,7 +3,7 @@ title: "Nightmare Addon Documentation Page"
 description: Documentation and Planning.
 layout: default
 ---
-# Nightmare Addon for Minecraft Bedrock Edition
+# Nightmare Addon Documentation Page
 
 Time to spice up your Minecraft world! This add-on is like a game-changer buffet—new creatures, items, weapons, events, armors, and even pets are on the menu! It's a whole new adventure waiting for you. Grab your pickaxe and let the blocky fun with extra goodies begin!
 
@@ -37,8 +37,8 @@ Time to spice up your Minecraft world! This add-on is like a game-changer buffet
 ## Axequaker
 
 - A formidable warrior wielding a massive axe.  
-  Power Star: **** (4/5)  
-  Rareness: *** (3/5)  
+  Power Star: ⭐⭐⭐⭐ (4/5)  
+  Rareness: ⭐⭐⭐ (3/5)  
   Attack Type: Melee  
   Attack Damage: High  
   Health: Moderate  
@@ -48,8 +48,8 @@ Time to spice up your Minecraft world! This add-on is like a game-changer buffet
 ## Eye Pet
 
 - A friendly floating eye creature that follows the player.  
-  Power Star: ** (2/5)  
-  Rareness: *** (3/5)  
+  Power Star: ⭐⭐ (2/5)  
+  Rareness: ⭐⭐⭐ (3/5)  
   Attack Type: None  
   Attack Damage: None  
   Health: Low  
@@ -59,19 +59,19 @@ Time to spice up your Minecraft world! This add-on is like a game-changer buffet
 ## Eye Specter
 
 - An eerie spectral eye that hovers and watches.  
-  Power Star: *** (3/5)  
-  Rareness: **** (4/5)  
+  Power Star: ⭐⭐⭐ (3/5)  
+  Rareness: ⭐⭐⭐⭐ (4/5)  
   Attack Type: Ranged (Eye Beam)  
   Attack Damage: Moderate  
   Health: Low  
-  Ability: 
+  Ability: None  
   Drops: Spectral Eye Lens
 
 ## Ghost
 
 - A casual ghost.  
-  Power Star: * (1/5)  
-  Rareness: ** (2/5)  
+  Power Star: ⭐ (1/5)  
+  Rareness: ⭐⭐ (2/5)  
   Attack Type: None  
   Attack Damage: None  
   Health: Low  
@@ -81,8 +81,8 @@ Time to spice up your Minecraft world! This add-on is like a game-changer buffet
 ## Ghoul
 
 - A sinister undead creature with a hunger for flesh.  
-  Power Star: *** (3/5)  
-  Rareness: *** (3/5)  
+  Power Star: ⭐⭐⭐ (3/5)  
+  Rareness: ⭐⭐⭐ (3/5)  
   Attack Type: Melee  
   Attack Damage: Moderate  
   Health: Moderate  
@@ -92,8 +92,8 @@ Time to spice up your Minecraft world! This add-on is like a game-changer buffet
 ## Reaper
 
 - A relentless harbinger of death, wielding a scythe.  
-  Power Star: ***** (5/5)  
-  Rareness: **** (4/5)  
+  Power Star: ⭐⭐⭐⭐⭐ (5/5)  
+  Rareness: ⭐⭐⭐⭐ (4/5)  
   Attack Type: Melee (Scythe Swipe)  
   Attack Damage: High  
   Health: High  
@@ -103,8 +103,8 @@ Time to spice up your Minecraft world! This add-on is like a game-changer buffet
 ## Wraithwood Stalker
 
 - A ghostly figure that lurks in the haunted Wraithwood Forest.  
-  Power Star: **** (4/5)  
-  Rareness: **** (4/5)  
+  Power Star: ⭐⭐⭐⭐ (4/5)  
+  Rareness: ⭐⭐⭐⭐ (4/5)  
   Attack Type: Ranged (Shadow Bolts)  
   Attack Damage: Moderate  
   Health: Moderate  
@@ -114,8 +114,8 @@ Time to spice up your Minecraft world! This add-on is like a game-changer buffet
 ## Zomboni
 
 - A zombie riding a cold and deadly ice machine.  
-  Power Star: **** (4/5)  
-  Rareness: *** (3/5)  
+  Power Star: ⭐⭐⭐ (3/5)  
+  Rareness: ⭐⭐⭐ (3/5)  
   Attack Type: Ranged (Ice Blasts)  
   Attack Damage: High  
   Health: High  
@@ -127,8 +127,8 @@ Time to spice up your Minecraft world! This add-on is like a game-changer buffet
 #### Skelifish
 
 - A skeletal fish that roams the depths of haunted waters.  
-  Power Star: ** (2/5)  
-  Rareness: *** (3/5)  
+  Power Star: ⭐⭐ (2/5)  
+  Rareness: ⭐⭐⭐ (3/5)  
   Attack Type: None  
   Attack Damage: None  
   Health: Low  
@@ -138,8 +138,8 @@ Time to spice up your Minecraft world! This add-on is like a game-changer buffet
 #### Tombstone
 
 - An animated tombstone that offers guidance in the graveyard.  
-  Power Star: *** (3/5)  
-  Rareness: *** (3/5)  
+  Power Star: ⭐⭐⭐ (3/5)  
+  Rareness: ⭐⭐⭐ (3/5)  
   Attack Type: None  
   Attack Damage: None  
   Health: Moderate  
@@ -151,8 +151,8 @@ Time to spice up your Minecraft world! This add-on is like a game-changer buffet
 #### Headless Horseman
 
 - A legendary spectral rider with a flaming pumpkin head.  
-  Power Star: ***** (5/5)  
-  Rareness: ***** (5/5)  
+  Power Star: ⭐⭐⭐⭐⭐ (5/5)  
+  Rareness: ⭐⭐⭐⭐⭐ (5/5)  
   Attack Type: Melee (Charging Strikes)  
   Attack Damage: Extremely High  
   Health: Boss Level  
@@ -162,8 +162,8 @@ Time to spice up your Minecraft world! This add-on is like a game-changer buffet
 #### Royal Ghost
 
 - The phantom ruler of the spirit realm, wielding ghostly powers.  
-  Power Star: ***** (5/5)  
-  Rareness: ***** (5/5)  
+  Power Star: ⭐⭐⭐⭐⭐ (5/5)  
+  Rareness: ⭐⭐⭐⭐⭐ (5/5)  
   Attack Type: Ranged (Ethereal Blasts)  
   Attack Damage: Extremely High  
   Health: Boss Level  
@@ -182,6 +182,8 @@ Time to spice up your Minecraft world! This add-on is like a game-changer buffet
 - [**shadow_essence**](##shadow-essence)
 - [**soul_shard**](##soul-shard)
 - [**wraithwood_heart**](##wraithwood-heart)
+
+
 - [**wraith_cloak**](##wraith-cloak)
 
 ## ITEMS DESCRIPTION
