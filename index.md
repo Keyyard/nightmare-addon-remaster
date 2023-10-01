@@ -4,6 +4,12 @@ permalink: /
 layout: default
 ---
 
+# Menu
+
+- [Mobs](#mobs)
+- [Items](#items)
+- [Planning Items](#Planning-items)
+
 # MOBS LIST
 
 - [Axequaker](#axequaker)
@@ -160,3 +166,74 @@ layout: default
   Health: Boss Level  
   Ability: Ghostly Dominion - Summons ghostly minions to aid in battle.  
   Drops: Royal Crown of Spirits, Ectoplasmic Robes
+
+
+# ITEMS LIST
+
+- [**cursed_spell_paper**](#cursed-spell-paper)
+- [**demonic_blade**](#demonic-blade)
+- [**demonic_blade_old**](#demonic-blade-old)
+- [**eye_wand**](#eye-wand)
+- [**hell_ingot**](#hell-ingot)
+- [**hell_trident**](#hell-trident)
+- [**shadow_essence**](#shadow-essence)
+- [**soul_shard**](#soul-shard)
+- [**wraithwood_heart**](#wraithwood-heart)
+- [**wraith_cloak**](#wraith-cloak)
+
+# ITEMS DESCRIPTION
+
+## cursed_spell_paper
+A forbidden parchment infused with dark magic. Used in rituals to call forth demonic forces.
+
+## demonic_blade
+A wicked blade forged in the fires of the underworld. Possesses unholy powers and a thirst for souls.
+
+## demonic_blade_old
+An ancient version of the demonic blade, rumored to be even more powerful. Handle with care.
+
+## eye_wand
+A magical wand shaped like an eye. Unleashes Eye Pet.
+
+## hell_ingot
+A rare and infernal metal ingot, forged in the depths of hell. Used in crafting powerful weapons and armor.
+
+## hell_trident
+A deadly trident imbued with hellish energy. Strikes fear into the hearts of the bravest warriors.
+
+## shadow_essence
+A dark and ethereal substance extracted from shadowy entities. Used in crafting mysterious items.
+
+## soul_shard
+A crystallized fragment of a captured soul. Possesses potent energies and is used in dark rituals.
+
+## wraithwood_heart
+The pulsating heart of the haunted Wraithwood Forest. Holds mysterious powers and is a rare crafting ingredient.
+
+## wraith_cloak
+A cloak woven from the essence of wraiths. Grants the wearer the ability to move unseen in the shadows.
+
+# Planning ITEMS
+
+- [**abyssal_orb**](#abyssal-orb)
+- [**spectral_quill**](#spectral-quill)
+- [**phantom_mirror**](#phantom-mirror)
+- [**nether_cloak**](#nether-cloak)
+- [**void_insignia**](#void-insignia)
+
+# Planning ITEMS DESCRIPTION
+
+## abyssal_orb
+A mysterious orb that radiates an otherworldly glow. When activated, it opens a temporary portal to the abyss, summoning creatures from the depths.
+
+## spectral_quill
+A quill made from the feathers of ghostly entities. Used to inscribe spells and enchantments onto scrolls, granting unique magical effects.
+
+## phantom_mirror
+A mystical mirror that reflects the ethereal. When gazed upon, it briefly reveals hidden truths and glimpses of the spirit realm.
+
+## nether_cloak
+A dark cloak crafted from the fabric of the nether. Grants the wearer increased resistance to fire and allows them to traverse through flames unharmed.
+
+## void_insignia
+An ancient insignia with the power to manipulate the void. When worn, it opens a temporary rift to the void, pulling nearby entities into its dark embrace.

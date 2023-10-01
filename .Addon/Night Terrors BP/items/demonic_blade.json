@@ -1,0 +1,98 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "item:demonic_blade",
+      "category": "equipment"
+    },
+
+    "components": {
+      "minecraft:max_stack_size": 1,
+      "minecraft:use_duration": 3600,
+      "minecraft:damage": 13,
+      "minecraft:can_destroy_in_creative": false,
+      "minecraft:explodable": false,
+      "minecraft:should_despawn": false,
+      "minecraft:enchantable": {
+        "value": 10,
+        "slot": "sword"
+      },
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.equipment"
+      },
+      "minecraft:durability": {
+        "damage_chance": 1.0,
+        "max_durability": 1400
+      },
+      "minecraft:icon": {
+        "texture": "texture:demonic_blade"
+      },
+      "minecraft:digger": {
+        "use_efficiency": true,
+        "on_dig": {
+          "event": "event:on_dig"
+        }
+      },
+      "minecraft:weapon": {
+        "on_hurt_entity": {
+          "event": "event:on_hit_entity"
+        },
+        "on_not_hurt_entity": {
+          "event": "event:on_hit_entity"
+        }
+      }
+    },
+
+    "events": {
+      "event:on_dig": {
+        "damage": {
+          "type": "all",
+          "target": "self",
+          "amount": 1
+        }
+      },
+      "event:on_hit_entity": {
+        "sequence": [
+          {
+            "add_mob_effect": {
+              "effect": "slowness",
+              "target": "other",
+              "duration": 2,
+              "amplifier": 5
+            }
+          },
+          {
+            "add_mob_effect": {
+              "effect": "slow_falling",
+              "target": "other",
+              "duration": 2,
+              "amplifier": 255
+            }
+          },
+          {
+            "add_mob_effect": {
+              "effect": "weakness",
+              "target": "other",
+              "duration": 5,
+              "amplifier": 2
+            }
+          },
+          {
+            "damage": {
+              "type": "all",
+              "target": "self",
+              "amount": 2
+            }
+          },
+          {
+            "damage": {
+              "type": "fire_tick",
+              "target": "other",
+              "amount": 1
+            }
+          }
+        ]
+      }
+    }
+  }
+}

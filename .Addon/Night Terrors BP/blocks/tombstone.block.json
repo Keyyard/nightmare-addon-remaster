@@ -17,13 +17,13 @@
       "tombstone:interact": {
         "sequence": [
           {
-            "condition": "q.moon_brightness=0",
+            "condition": "q.moon_brightness=0;",
             "run_command": {
               "command": "tellraw @a {\"rawtext\":[{\"text\":\"§eCome back when the moon is brightest\"}]}"
             }
           },
           {
-            "condition": "q.moon_brightness=1",
+            "condition": "q.moon_brightness=1;",
             "sequence": [
               {
                 "play_sound": {

@@ -1,22 +1,39 @@
 {
-    "format_version": "1.20.10",
-    "minecraft:item": {
-        "description": {
-            "identifier": "item:eye_wand",
-            "category": "Items",
-            "is_experimental": false
+  "format_version": "1.20.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "item:eye_wand",
+      "category": "Items"
+    },
+    "events": {
+      "summon": {
+        "run_command": {
+          "command": ["playsound fire.ignite", "summon entity:eyepet ~~~ ~~ tame"]
         },
-        "components": {
-            "minecraft:icon": {
-                "texture": "eye_wand"
-            },
-            "minecraft:entity_placer": {
-                "entity": "entity:eye_pet<tame>"
-            },
-            "minecraft:max_stack_size": 64,
-            "minecraft:display_name": {
-                "value": "Eye Wand"
-            }
+        "swing": {}
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "texture": "eye_wand"
+      },
+      "minecraft:use_duration": 1,
+      "minecraft:durability": {
+        "damage_chance": {
+          "min": 2,
+          "max": 2
+        },
+        "max_durability": 36
+      },
+      "minecraft:on_use": {
+        "on_use": {
+          "event": "summon"
         }
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:display_name": {
+        "value": "Eye Wand"
+      }
     }
+  }
 }

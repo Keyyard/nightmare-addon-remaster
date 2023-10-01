@@ -1,0 +1,1 @@
+execute as @a[hasitem={item=item:wraithwood_cloak,location=slot.armor.chest}] run effect @s minecraft:invisibility 1 0 true

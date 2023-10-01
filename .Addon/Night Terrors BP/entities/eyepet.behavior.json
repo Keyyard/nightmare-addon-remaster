@@ -35,12 +35,9 @@
       "minecraft:tameable": {
         "probability": 1
       },
-      "minecraft:experience_reward": {
-        "on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
-      },
 	  "minecraft:behavior.charge_attack": {
 		"max_distance": 7,
-		"min_distance": 0,
+		"min_distance": 1,
 		"priority": 0,
 		"speed_multiplier": 1.5,
 		"success_rate": 1
@@ -54,10 +51,6 @@
 			{
 				"interact_text": "Tame",
 				"on_interact":"tame",
-				"particle_on_start": {
-					"effect": "minecraft:heart_particle",
-					"offset": [0, 1, 0]
-				},
 				"play_sounds": "cast.spell"
 
 			}

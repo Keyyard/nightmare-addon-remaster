@@ -2,7 +2,7 @@
 	"format_version": "1.20.10",
 	"minecraft:item": {
 		"description": {
-			"identifier": "item:wraith_cloak",
+			"identifier": "item:wraithwood_cloak",
 			"category": "Equipment"
 		},
 		"components": {
