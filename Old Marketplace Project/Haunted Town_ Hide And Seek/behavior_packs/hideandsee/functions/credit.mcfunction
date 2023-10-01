@@ -1,1 +1,0 @@
-tellraw @a {"rawtext":[{"text":"§lCreated by §4Keyyard Studio§r\n§bTwitter: @KeyyardStudio\n§3Discord.gg/ppaKuABESE\n§econtact@keyyard.studio"}]}
