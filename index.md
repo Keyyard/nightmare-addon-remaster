@@ -222,7 +222,7 @@ A cloak woven from the essence of wraiths. Grants the wearer the ability to move
 - [**nether_cloak**](#nether-cloak)
 - [**void_insignia**](#void-insignia)
 
-# Planning ITEMS DESCRIPTION
+# Planning Items
 
 ## abyssal_orb
 A mysterious orb that radiates an otherworldly glow. When activated, it opens a temporary portal to the abyss, summoning creatures from the depths.
