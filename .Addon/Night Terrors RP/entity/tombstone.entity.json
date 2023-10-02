@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "entity:skelifish",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/tombstone"
+			},
+			"geometry": {
+				"default": "geometry.tombstone"
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#c5c596",
+				"overlay_color": "#fe3737"
+			}
+		}
+	}
+}
