@@ -15,7 +15,7 @@
 		  "enchanted": "textures/misc/enchanted_item_glint"
 		},
 		"geometry": {
-		  "default": "geometry.wraithwood_cloak"
+		  "default": "geometry.wraith_cloak"
 		},
 		"scripts": {
 		  "parent_setup": "variable.chestplate_layer_visible = 0.0;"

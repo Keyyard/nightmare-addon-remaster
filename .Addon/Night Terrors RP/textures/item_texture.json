@@ -17,6 +17,9 @@
         "wraith_cloak": {
 			"textures": "textures/items/wraith_cloak"
 		},
+        "demonic_blade": {
+            "textures": "textures/items/demonic_blade"
+        },
         "eye_wand": {
 			"textures": "textures/items/eye_wand"
 		}

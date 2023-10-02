@@ -3,8 +3,6 @@ pack.description=Add-On made by §b@Keyyard§r on Twitter. Stumbled upon an adve
 
 item.item:demonic_blade=Darkness Blade
 item.item:cursed_spell_paper=Cursed Spell Paper
-item.item:hell_ingot=Inferno Ingot
-item.item:hell_trident=Inferno Trident
 item.item:hatchet=Hatchet
 
 item.spawn_egg.entity.entity:ghost.name=Spawn Ghost
@@ -24,4 +22,3 @@ entity.entity:reaper.name=Reaper
 entity.entity:ghoul.name=Ghoul
 entity.entity:spirit.name=Spirit
 entity.entity:tombstone.name=Tombstone
-entity.entity:thrown_hell_trident.name=Thrown Inferno Trident

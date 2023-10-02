@@ -1,49 +1,15 @@
 {
-  "format_version": "1.16.0",
+  "format_version": "1.16.200",
   "minecraft:entity": {
     "description": {
       "identifier": "entity:eyespecter",
       "is_spawnable": true,
       "is_summonable": true,
-      "is_experimental": false
+      "is_experimental": false,
+      "runtime_identifier": "enderman"
     },
     "component_groups": {
-      "calm": {
-        "minecraft:on_target_acquired": {
-          "event": "entity:become_angry",
-          "target": "self"
-        },
-        "minecraft:movement": {
-          "value": 0.3
-        },
-        "minecraft:scale": {
-          "value": 1
-        }
-      },
       "angry1": {
-        "minecraft:angry": {
-          "duration": 25,
-          "calm_event": {
-            "event": "entity:become_calm",
-            "target": "self"
-          }
-        },
-        "minecraft:behavior.nearest_attackable_target": {
-          "priority": 1,
-          "reselect_targets": true,
-          "entity_types": [
-            {
-              "filters": {
-                "test": "is_family",
-                "subject": "other",
-                "operator": "not",
-                "value": "eyespecter"
-              },
-              "max_dist": 32
-            }
-          ],
-          "must_see": true
-        },
         "minecraft:timer": {
           "time": [0.05, 0.1],
           "looping": true,
@@ -53,12 +19,6 @@
         },
         "minecraft:scale": {
           "value": 1.5
-        },
-        "minecraft:movement": {
-          "value": 0.45
-        },
-        "minecraft:behavior.melee_attack": {
-          "priority": 2
         }
       },
       "angry2": {
@@ -71,12 +31,6 @@
         },
         "minecraft:scale": {
           "value": 1
-        },
-        "minecraft:movement": {
-          "value": 0.45
-        },
-        "minecraft:behavior.melee_attack": {
-          "priority": 2
         }
       }
     },
@@ -84,7 +38,7 @@
     "components": {
       "minecraft:is_hidden_when_invisible": {},
       "minecraft:experience_reward": {
-        "on_death": "query.last_hit_by_player ? 5 : 0"
+        "on_death": 8
       },
       "minecraft:type_family": {
         "family": ["eyespecter", "monster", "mob"]
@@ -101,6 +55,23 @@
         "value": 40,
         "max": 40
       },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 1,
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "operator": "not",
+              "value": "eyespecter"
+            },
+            "max_dist": 32
+          }
+        ],
+        "must_see": true
+      },
+      
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
           {
@@ -162,17 +133,6 @@
       "minecraft:despawn": {
         "despawn_from_distance": {}
       },
-      "minecraft:behavior.nearest_attackable_target": {
-        "priority": 2,
-        "reselect_targets": true,
-        "entity_types": [
-          {
-            "filters": { "test": "is_family", "subject": "other", "value": "player" },
-            "max_dist": 32
-          }
-        ],
-        "must_see": true
-      },
       "minecraft:behavior.melee_attack": {
         "priority": 2,
         "speed_multiplier": 1.25,
@@ -221,23 +181,7 @@
       "minecraft:entity_spawned": {
         "remove": {},
         "add": {
-          "component_groups": ["calm"]
-        }
-      },
-      "entity:become_angry": {
-        "remove": {
-          "component_groups": ["calm"]
-        },
-        "add": {
           "component_groups": ["angry1"]
-        }
-      },
-      "entity:become_calm": {
-        "remove": {
-          "component_groups": ["angry1", "angry2"]
-        },
-        "add": {
-          "component_groups": ["calm"]
         }
       },
       "angry1": {

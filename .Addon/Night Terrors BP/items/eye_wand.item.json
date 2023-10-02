@@ -8,7 +8,7 @@
     "events": {
       "summon": {
         "run_command": {
-          "command": ["playsound fire.ignite", "summon entity:eyepet ~~~ ~~ tame"]
+          "command": ["playsound fire.ignite", "summon entity:eyepet"]
         },
         "swing": {}
       }
