@@ -64,6 +64,9 @@
         "minecraft:flying_speed": {
           "value": 0.19
         },
+        "minecraft:loot": {
+          "table": "loot_tables/entities/ghost.json"
+        },
         "minecraft:behavior.nearest_attackable_target": {
           "priority": 1,
           "within_radius": 45,

@@ -6,9 +6,6 @@
 	"texture_data": {
 		"tombstone": {
 			"textures": "textures/blocks/tombstone.png"
-		},
-		"keyyard_vase": {
-			"textures": "textures/blocks/vase"
 		}
 	}
 }
