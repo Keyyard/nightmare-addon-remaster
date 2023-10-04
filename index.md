@@ -64,7 +64,10 @@ Time to spice up your Minecraft world! This add-on is like a game-changer buffet
   Attack Type: Ranged (Eye Beam)  
   Attack Damage: Moderate  
   Health: Low  
-  Ability: None  
+  Ability:
+  + add 4 stages for Eyespecter
+  + Eyespecter were got invisible effect on night or underground
+  + if player looks at him, he will give blindness and weakness effect for nearest player.  
   Drops: Spectral Eye Lens
 
 ## Ghost
